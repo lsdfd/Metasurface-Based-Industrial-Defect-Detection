@@ -1,0 +1,7 @@
+Use case: scientific-educational
+Asset type: 16:9 slide background figure
+Primary request: Visualize the core problem of industrial defect detection: high-resolution images, sparse tiny defects, and expensive electronic CNN computation.
+Scene: A large grayscale industrial texture image with a few tiny highlighted defect regions, next to a simplified electronic processor showing computational load as abstract heat/blocks.
+Visual style: clean technical illustration blended with realistic texture, white/light-gray background, deep blue and teal accents, restrained red marks only for defects.
+Composition: left side image inspection, right side computation burden; central visual balance, no text.
+Avoid: no readable text, no UI labels, no factory worker, no stock-photo look, no dark cyberpunk style.

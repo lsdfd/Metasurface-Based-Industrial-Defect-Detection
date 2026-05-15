@@ -1,0 +1,7 @@
+Use case: scientific-educational
+Asset type: 16:9 research roadmap diagram background
+Primary request: Create a high-level visual roadmap for transferring an electronic teacher model into a metasurface optical frontend and lightweight electronic backend.
+Scene: Three connected stages: a large electronic neural network teacher, a compact optical convolution bank/metasurface, and a small electronic decision head for defect detection.
+Visual style: clean academic systems diagram rendered as semi-realistic components, white background, deep blue lines, teal optical glow, minimal red defect cue.
+Composition: left-to-right flow with generous whitespace for later slide annotations; no embedded text.
+Avoid: no readable text, no equations, no logos, no purple-heavy gradient, no black background.

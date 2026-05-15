@@ -1,0 +1,7 @@
+Use case: scientific-educational
+Asset type: 16:9 future work slide image
+Primary request: Show future extension of metasurface optical frontend to defect localization on PCB, wafer, and chip surfaces with a lightweight detector.
+Scene: a wafer/PCB inspection sample with bounding boxes around tiny defects, connected to a compact metasurface-camera module and edge processor.
+Visual style: clean research concept visual, realistic electronic surfaces, white/light-gray background, deep blue/teal accents, subtle red bounding boxes.
+Composition: inspection sample dominates center, optical module on one side, keep it uncluttered and readable for a slide.
+Avoid: no readable text, no brand names, no futuristic city, no purple-dominant palette, no noisy factory scene.

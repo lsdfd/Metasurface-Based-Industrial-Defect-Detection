@@ -1,0 +1,7 @@
+Use case: scientific-educational
+Asset type: 16:9 optical setup schematic for PPT
+Primary request: Render a hybrid optical-electronic inspection setup: LED or laser illumination, industrial sample, metasurface optical convolution plate, relay lens, CMOS sensor, and small electronic backend.
+Scene: Components arranged left-to-right on an optical bench, with subtle beam paths and a magnified inset feeling for the metasurface.
+Visual style: scientific apparatus illustration, accurate but presentation-friendly, light background, crisp edges, blue/teal optical paths.
+Composition: centered system, enough margins for slide title and bottom conclusion.
+Avoid: no readable text labels, no unrealistic giant chips, no cluttered lab, no dark cinematic lighting.

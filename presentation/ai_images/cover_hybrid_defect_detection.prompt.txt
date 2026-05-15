@@ -1,0 +1,7 @@
+Use case: scientific-educational
+Asset type: 16:9 title slide hero image for a research presentation
+Primary request: Create a clean, realistic scientific visualization of a hybrid optical-electronic industrial defect inspection system.
+Scene: A fabric or industrial texture sample is illuminated on the left, light passes through a thin metasurface optical element in the center, and a CMOS sensor plus compact electronic processor sits on the right.
+Visual style: polished research-lab rendering, white and light-gray background, deep blue technical accents, realistic optics, subtle light rays, precise and calm.
+Composition: leave clear empty space in the upper-left area for a Chinese presentation title; main hardware path runs left-to-right across the lower middle.
+Avoid: no readable text, no logos, no busy factory line, no fantasy sci-fi, no purple-dominant palette, no dark background.
