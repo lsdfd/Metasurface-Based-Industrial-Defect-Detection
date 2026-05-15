@@ -136,6 +136,21 @@ IoU=0.83782
 Dice=0.87685
 ```
 
+上面是早期 capped `MAX_VAL_SAMPLES=600` 结果。后续对同一个 best checkpoint 跑了无 `MAX_VAL_SAMPLES` 的 full validation：
+
+```text
+num_samples=1150
+AP=1.00000
+AUC=1.00000
+IoU=0.91451
+Dice=0.93488
+threshold=0.50
+Precision=0.99575
+Recall=0.91761
+```
+
+threshold sweep 的 best-IoU 和 best-Dice 点也都是 `0.50`，说明 full validation 结果不是靠调非默认阈值得到的。
+
 路径：
 
 ```text
@@ -144,11 +159,11 @@ results-dagm-distill-focused/DAGM/dagm_c7_r256_o64_k15_d4_e12-24-32_seg5_vol3_fg
 
 ## 下一步必须补的验证
 
-当前结果已经值得继续，但还不是最终数值。下一步需要：
+当前结果已经值得继续进入 PSF/超表面后处理，但还不是最终论文数值。下一步需要：
 
-- full validation/test；
-- final best checkpoint 可视化；
-- threshold sweep 指标；
+- separate TEST split 或原论文 protocol 对比；
+- mixed panels，包括负样本和正样本；
+- threshold sweep 指标作为附录记录；
 - optical kernels 的正负 PSF 分解检查；
 - 接 `卷积核->超表面相位设计代码/` 做 target PSF 到 simulated PSF / phase 的优化；
 - 如果 simulated PSF 偏离 learned kernel，再做 hardware-aware retraining。

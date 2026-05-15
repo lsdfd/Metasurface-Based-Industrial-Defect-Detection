@@ -165,7 +165,10 @@ Current judgment: probably not fake, but still not final-proof.
 
 Reasons it is unlikely to be purely fake:
 
+- Full validation without `MAX_VAL_SAMPLES` reached `IoU=0.91451` and `Dice=0.93488` over `1150` samples.
+- The threshold sweep selected the default `0.50` threshold as both the best-IoU and best-Dice point, so the full validation result is not a hand-picked non-default threshold artifact.
 - Positive-only visualizations from the earlier `r256_o64_k15_d4_m300` run showed predicted heatmaps landing on the actual GT defect blobs, not arbitrary image regions.
+- Fresh positive-only visualizations from the final best checkpoint also show heatmaps landing on the GT defect regions.
 - Classification AP/AUC reached `1.0`, but segmentation IoU/Dice improved gradually and separately, so the metric is not just a classifier score being reused as a mask score.
 - The best focused run ended at its best validation result, rather than showing one isolated lucky spike only.
 - Multiple nearby configurations reached similar high Dice values around `0.86-0.88`, which suggests a reproducible architecture/loss effect rather than a single corrupted run.
@@ -173,19 +176,18 @@ Reasons it is unlikely to be purely fake:
 
 Reasons we should still be cautious:
 
-- The focused sweep still used `MAX_VAL_SAMPLES=600`, not the full validation/test set.
+- Full validation has now been run on the VAL split, but a separate held-out TEST split or original paper protocol comparison should still be reported before final paper claims.
 - Some runs had large validation oscillations, so checkpoint selection matters.
-- The reported segmentation metric uses a fixed default threshold of `0.5`; threshold sensitivity should be recorded.
-- We need fresh visualizations for the final best checkpoint, not only the earlier `m300` checkpoint.
+- Threshold sensitivity is now recorded, but should still be included in the appendix rather than hidden.
 - DAGM Class7 defects can be visually subtle and repetitive, so qualitative checks are important.
 
 ## Recommended Next Verification
 
 Before presenting the result as final:
 
-1. Run full validation/test evaluation for the best checkpoint without `MAX_VAL_SAMPLES`.
-2. Export positive-only and mixed visual panels for the best checkpoint.
-3. Use the threshold sweep in `evaluate_student_visuals.py` to report both fixed-threshold and best-threshold segmentation metrics.
+1. Run separate TEST split evaluation if we want paper-level final numbers.
+2. Export additional mixed panels including negative samples, not only positive-only panels.
+3. Include the threshold sweep from `evaluate_student_visuals.py` in the experiment appendix.
 4. Compare the best student against the teacher on the same full evaluation split.
 5. Save the best optical kernels:
 
@@ -232,7 +234,22 @@ Dice=0.877
 
 on the capped `600`-sample validation setting.
 
-The result is strong enough to justify deeper validation and visualization. It should not yet be treated as the final paper-quality number until full evaluation and final checkpoint visual inspection are complete.
+Full validation was then run for the same best checkpoint with no `MAX_VAL_SAMPLES` cap:
+
+```text
+num_samples=1150
+AP=1.00000
+AUC=1.00000
+threshold=0.50
+IoU=0.91451
+Dice=0.93488
+Precision=0.99575
+Recall=0.91761
+```
+
+The threshold sweep also selected `0.50` as both the best-IoU and best-Dice threshold. This is useful because the full validation result is not relying on a hand-picked non-default segmentation threshold.
+
+The result is strong enough to justify moving into optical-kernel / PSF post-processing. It should not yet be treated as the final paper-quality number until separate TEST split or original-protocol comparison is complete.
 
 ## Best Student Architecture, Detailed
 
