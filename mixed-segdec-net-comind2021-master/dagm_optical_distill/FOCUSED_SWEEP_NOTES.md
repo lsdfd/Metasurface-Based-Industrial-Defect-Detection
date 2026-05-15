@@ -442,6 +442,50 @@ The distillation result is strong, but the system is not finished. Next steps:
 8. Optical simulation:
    Use angular-spectrum / PSF engineering code to optimize phase or scatterer geometry and compare target PSF vs simulated PSF.
 
+   Current first-pass implementation:
+
+   ```text
+   dagm_optical_distill/run_dagm_metasurface_batch.py
+   ```
+
+   This script is adapted from the fabric metasurface stage-1 scripts and the standalone PSF-engineering notebook. It is not yet a final RCWA/fabrication-ready metasurface optimizer. It is a quick feasibility probe using:
+
+   - positive/negative PSF targets from `dagm_psf_targets.npz`;
+   - center ROI optimization;
+   - green-wavelength radius-phase proxy;
+   - angular spectrum forward propagation;
+   - Adam optimization over radius values;
+   - target-vs-simulated PSF cosine / relative-L2 metrics.
+
+   Representative kernels selected for the first probe:
+
+   ```text
+   kernel 0: balanced positive/negative mass, baseline case
+   kernel 51: high-energy learned kernel
+   kernel 53: high-energy learned kernel
+   kernel 37: highly positive-biased kernel, stress-test case
+   ```
+
+   First-pass result, `ITERATIONS=40`, `ROI_SIZE=96`:
+
+   | Kernel | Branch | Cosine similarity | Relative L2 |
+   |---:|---|---:|---:|
+   | 0 | positive | 0.98038 | 0.19811 |
+   | 0 | negative | 0.97871 | 0.20637 |
+   | 51 | positive | 0.98555 | 0.16998 |
+   | 51 | negative | 0.98356 | 0.18136 |
+   | 53 | positive | 0.98452 | 0.17593 |
+   | 53 | negative | 0.98485 | 0.17409 |
+   | 37 | positive | 0.97959 | 0.20206 |
+   | 37 | negative | 0.99106 | 0.13369 |
+
+   Interpretation:
+
+   - The selected PSF targets are shape-matchable under the simplified proxy, with cosine similarity around `0.979-0.991`.
+   - Simulated PSFs visually reproduce the target bright structures.
+   - There is still a visible low-amplitude background speckle/noise floor. This may affect downstream segmentation after replacing digital kernels with simulated optical PSFs.
+   - Next validation should sweep `SCALE`, `ROI_SIZE`, iterations, and then test the simulated PSFs inside the student pipeline with the electronic backend/calibration.
+
 9. Hardware-aware retraining:
    After simulated PSF mismatch is known, freeze or perturb the optical frontend and fine-tune calibration/electronic backend.
 

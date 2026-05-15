@@ -13,6 +13,7 @@ dagm_optical_distill/
   distill_focused_student_sweep.sh
   evaluate_student_visuals.py
   prepare_dagm_psf_targets.py
+  run_dagm_metasurface_batch.py
   summarize_distill_results.py
 ```
 
@@ -24,6 +25,7 @@ dagm_optical_distill/
 - `distill_focused_student_sweep.sh`：复现当前最终推荐 student 配置。
 - `evaluate_student_visuals.py`：评估 best checkpoint，并导出可视化和 threshold sweep。
 - `prepare_dagm_psf_targets.py`：把 best optical kernels 拆成 positive/negative PSF targets，并导出超表面设计入口。
+- `run_dagm_metasurface_batch.py`：对选定 kernel 的 positive/negative PSF target 做首轮 phase/radius proxy 优化。
 - `summarize_distill_results.py`：从多个 run 的日志中汇总指标。
 
 ## 为什么只保留这些脚本
@@ -121,6 +123,45 @@ psf_backphase_preview.png
 
 其中 `dagm_psf_targets.npz` 是后续接 `卷积核->超表面相位设计代码/` 的主要入口。
 
+6. 首轮 metasurface 可实现性 probe。
+
+先不要一次性跑 64 个 kernel。建议先选代表 kernel：
+
+```text
+0: 正负均衡，作为基准；
+51, 53: 高能量/强响应 kernel；
+37: 正负极不平衡 kernel，作为压力测试。
+```
+
+命令示例：
+
+```bash
+python3 dagm_optical_distill/run_dagm_metasurface_batch.py \
+  --KERNEL_PACKAGE ./outputs/dagm_c7_best_psf_targets/dagm_psf_targets.npz \
+  --OUTPUT_ROOT ./outputs/dagm_c7_metasurface_probe_i40 \
+  --KERNEL_INDICES 0 51 53 37 \
+  --ITERATIONS 40 \
+  --ROI_SIZE 96 \
+  --DEVICE auto
+```
+
+这个脚本不是最终 RCWA 级别超表面设计，而是一个快速物理可实现性初筛：使用绿色波长的 radius-phase proxy、angular spectrum propagation 和 Adam 优化，比较 target PSF 与 simulated PSF 的相似度。
+
+当前首轮结果：
+
+| Kernel | Branch | Cosine similarity | Relative L2 |
+|---:|---|---:|---:|
+| 0 | positive | 0.98038 | 0.19811 |
+| 0 | negative | 0.97871 | 0.20637 |
+| 51 | positive | 0.98555 | 0.16998 |
+| 51 | negative | 0.98356 | 0.18136 |
+| 53 | positive | 0.98452 | 0.17593 |
+| 53 | negative | 0.98485 | 0.17409 |
+| 37 | positive | 0.97959 | 0.20206 |
+| 37 | negative | 0.99106 | 0.13369 |
+
+初步结论：在这个简化 proxy 下，选定 kernel 的中心 ROI 形状可拟合性较好，但 simulated PSF 存在背景 speckle/noise floor。后续需要用更严格的物理模型、不同 `SCALE/ROI_SIZE`、以及 hardware-aware retraining 继续验证。
+
 ## 当前 best run
 
 ```text
@@ -165,5 +206,5 @@ results-dagm-distill-focused/DAGM/dagm_c7_r256_o64_k15_d4_e12-24-32_seg5_vol3_fg
 - mixed panels，包括负样本和正样本；
 - threshold sweep 指标作为附录记录；
 - optical kernels 的正负 PSF 分解检查；
-- 接 `卷积核->超表面相位设计代码/` 做 target PSF 到 simulated PSF / phase 的优化；
+- 扩展 `run_dagm_metasurface_batch.py` 到更多 kernel、不同 `SCALE/ROI_SIZE`；
 - 如果 simulated PSF 偏离 learned kernel，再做 hardware-aware retraining。
