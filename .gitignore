@@ -1,0 +1,42 @@
+# macOS / editor
+.DS_Store
+*.swp
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Large datasets
+**/datasets/DAGM/
+**/datasets/KSDD/
+**/datasets/KSDD2/
+**/data/Defect_images/
+**/data/NODefect_images/
+**/data/*.zip
+fabric_defect_detection-main/data/aitex/
+
+# Training outputs and checkpoints
+**/results*/
+**/outputs/
+**/local_pull/
+mixed-segdec-net-comind2021-master/splits/STEEL/
+**/models/*.pth
+**/models/*.pt
+**/models/*.ckpt
+**/models/distillation/
+**/*.npy
+
+# Local server/private notes
+SERVER.local.md
+*.local.md
+
+# Nested git metadata is intentionally not tracked by the root repository.
+**/.git/

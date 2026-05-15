@@ -1,0 +1,25 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Datasets and generated artifacts
+datasets/DAGM/
+results*/
+outputs/
+local_pull/
+
+# Model artifacts
+*.pth
+*.pt
+*.ckpt
+*.npy
+
+# Logs and temporary files
+*.log
+*.tmp
+.DS_Store
