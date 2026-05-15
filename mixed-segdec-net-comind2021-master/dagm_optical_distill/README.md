@@ -1,15 +1,8 @@
-# DAGM Class7 光学前端蒸馏实验
+# DAGM Class7 光学前端蒸馏实验入口
 
-这个目录是当前项目的主实验入口。它只服务 DAGM Class7 上的 SegDecNet teacher 到 optical student 蒸馏路线。
+这个目录只保留当前成功路线所需脚本。早期 smoke、KSDD2、resolution sweep、旧 single/sweep 脚本已经从主线清理掉。
 
-## 为什么选 DAGM Class7
-
-- DAGM 是光学检测场景，和 metasurface optical frontend 的研究叙事更贴合。
-- Class7 是原 SegDecNet 项目中表现较好的 demo class。
-- 图像是灰度图，适合先做单波长/单通道 optical kernel bank。
-- 原图为 `512 x 512`，当前最佳 student 使用 `256 x 256` 输入和 `64 x 64` mask。
-
-## 当前文件
+## 文件说明
 
 ```text
 dagm_optical_distill/
@@ -22,49 +15,42 @@ dagm_optical_distill/
   summarize_distill_results.py
 ```
 
-说明：
+各文件作用：
 
-- `FOCUSED_SWEEP_NOTES.md`：完整记录架构探索、指标、风险和结论。
-- `check_dagm_dataset.py`：检查 DAGM 数据是否放对。
+- `FOCUSED_SWEEP_NOTES.md`：记录从失败探索到当前 best student 的过程和结论。
+- `check_dagm_dataset.py`：检查 DAGM Class7 数据目录。
 - `train_teacher_dagm_class7.sh`：训练 SegDecNet teacher。
-- `distill_focused_student_sweep.sh`：当前推荐的 focused student sweep。
-- `evaluate_student_visuals.py`：评估 student、导出可视化、保存 threshold sweep。
-- `summarize_distill_results.py`：汇总多个 distillation run 的日志。
+- `distill_focused_student_sweep.sh`：复现当前最终推荐 student 配置。
+- `evaluate_student_visuals.py`：评估 best checkpoint，并导出可视化和 threshold sweep。
+- `summarize_distill_results.py`：从多个 run 的日志中汇总指标。
 
-## 数据集位置
+## 为什么只保留这些脚本
 
-期望：
+清理原则是复现优先：
 
-```text
-datasets/DAGM/
-  Class7/
-    Train/
-    Test/
-```
+- `smoke_*` 只用于早期排错，现在不作为正式入口。
+- `distill_dagm_class7_single.sh` 是旧默认配置，效果不如 focused sweep。
+- `distill_dagm_class7_sweep.sh` 和 `distill_resolution_arch_sweep.sh` 是探索阶段脚本，结论已写入 `FOCUSED_SWEEP_NOTES.md`。
+- `train_joint_teachers_by_resolution.sh` 属于后来放弃的 matching-resolution teacher 路线。
+- 当前可复现主线只需要 teacher、best student reproduction、evaluation 三类脚本。
 
-如果保留完整 DAGM，也可以有 `Class1` 到 `Class10`，但当前脚本只使用 `FOLD=7`。
+## 复现顺序
 
-## 推荐复现流程
+所有命令在 `mixed-segdec-net-comind2021-master/` 下运行。
 
-1. 检查数据：
+1. 检查数据。
 
 ```bash
-python3 dagm_optical_distill/check_dagm_dataset.py --DATASET_PATH ./datasets/DAGM
+python3 dagm_optical_distill/check_dagm_dataset.py --dataset-path ./datasets/DAGM
 ```
 
-2. 训练 teacher：
+2. 训练 teacher。
 
 ```bash
 ./dagm_optical_distill/train_teacher_dagm_class7.sh
 ```
 
-teacher 默认输出到：
-
-```text
-results-dagm-teacher/DAGM/dagm_class7_teacher_segonly/FOLD_7/
-```
-
-3. 运行 focused student sweep：
+3. 跑当前 best student 复现脚本。
 
 ```bash
 ./dagm_optical_distill/distill_focused_student_sweep.sh \
@@ -75,7 +61,7 @@ results-dagm-teacher/DAGM/dagm_class7_teacher_segonly/FOLD_7/
   ./datasets/DAGM
 ```
 
-4. 评估最佳模型并导出正样本图：
+4. 评估 best checkpoint。
 
 ```bash
 python3 dagm_optical_distill/evaluate_student_visuals.py \
@@ -95,23 +81,13 @@ python3 dagm_optical_distill/evaluate_student_visuals.py \
   --SAVE_LIMIT 32
 ```
 
-## 当前推荐配置
+## 当前 best run
 
 ```text
-INPUT_SIZE=256
-OPTICAL_CHANNELS=64
-OPTICAL_KERNEL_SIZE=15
-DOWNSAMPLE_FACTOR=4
-EXTRACTOR_CHANNELS=12,24,32
-STAGE1_EPOCHS=12
-EPOCHS=70
-SEG_KD_WEIGHT=5.0
-VOLUME_KD_WEIGHT=3.0
-SEG_KD_FOREGROUND_WEIGHT=5.0
-SEG_KD_TEMPERATURE=2.0
+dagm_c7_r256_o64_k15_d4_e12-24-32_seg5_vol3_fg5_t2_m600_ep70
 ```
 
-当前 capped `600` 验证样本结果：
+结果：
 
 ```text
 AP=1.00000
@@ -120,17 +96,18 @@ IoU=0.83782
 Dice=0.87685
 ```
 
-## 重要提醒
-
-这个结果大概率不是假指标，但还不是最终结论。原因和风险已经写在：
+路径：
 
 ```text
-dagm_optical_distill/FOCUSED_SWEEP_NOTES.md
+results-dagm-distill-focused/DAGM/dagm_c7_r256_o64_k15_d4_e12-24-32_seg5_vol3_fg5_t2_m600_ep70/
 ```
 
-下一步必须补：
+## 下一步必须补的验证
+
+当前结果已经值得继续，但还不是最终数值。下一步需要：
 
 - full validation/test；
 - final best checkpoint 可视化；
-- threshold sweep 结果记录；
-- teacher/student 同 split 对比。
+- threshold sweep 指标；
+- teacher/student 同 split 对比；
+- optical kernels 的正负 PSF 分解检查。

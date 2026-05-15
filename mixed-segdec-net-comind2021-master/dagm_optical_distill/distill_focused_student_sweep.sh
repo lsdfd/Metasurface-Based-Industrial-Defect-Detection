@@ -81,9 +81,7 @@ run_one() {
   echo "[Focused Sweep] Finished ${run_name}"
 }
 
-# Current best neighborhood. Optical frontend remains a single convolution bank;
-# we only vary physically meaningful bank capacity/kernel size and electronic head width.
-run_one "dagm_c7_r256_o64_k15_d4_e12-24-32_seg3_vol2_fg3_t2_m600_ep60" 60 10 256 64 15 4 "12,24,32" 600 600 1.0 3.0 2.0 3.0 2.0 0.15 0.4 0.05
+# Reproduce the current best student. Historical architecture/loss exploration is
+# documented in FOCUSED_SWEEP_NOTES.md; the active script keeps only the final
+# recommended setting.
 run_one "dagm_c7_r256_o64_k15_d4_e12-24-32_seg5_vol3_fg5_t2_m600_ep70" 70 12 256 64 15 4 "12,24,32" 600 600 1.0 5.0 3.0 5.0 2.0 0.10 0.3 0.05
-run_one "dagm_c7_r256_o96_k15_d4_e16-32-48_seg3_vol2_fg3_t2_m600_ep60" 60 10 256 96 15 4 "16,32,48" 600 600 1.0 3.0 2.0 3.0 2.0 0.15 0.4 0.05
-run_one "dagm_c7_r256_o64_k19_d4_e12-24-32_seg3_vol2_fg4_t2_m600_ep60" 60 10 256 64 19 4 "12,24,32" 600 600 1.0 3.0 2.0 4.0 2.0 0.15 0.4 0.05
