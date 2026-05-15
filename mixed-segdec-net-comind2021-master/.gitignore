@@ -12,12 +12,17 @@ datasets/DAGM/
 results*/
 outputs/
 local_pull/
+!paper_assets/
+!paper_assets/**
 
 # Model artifacts
 *.pth
 *.pt
 *.ckpt
 *.npy
+!paper_assets/**/*.pth
+!paper_assets/**/*.pt
+!paper_assets/**/*.npy
 
 # Logs and temporary files
 *.log

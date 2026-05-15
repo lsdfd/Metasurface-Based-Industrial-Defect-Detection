@@ -1,0 +1,187 @@
+{
+  "AP": 1.0,
+  "AUC": 1.0,
+  "best_f_measure": 0.999999995,
+  "segmentation": {
+    "threshold": 0.5,
+    "mean_iou": 0.9145140900559399,
+    "mean_dice": 0.9348760930435012,
+    "mean_precision": 0.9957511172125614,
+    "mean_recall": 0.9176096731634662,
+    "samples": 1150
+  },
+  "segmentation_threshold_sweep": {
+    "thresholds": [
+      {
+        "threshold": 0.05,
+        "mean_iou": 0.028756940032341003,
+        "mean_dice": 0.04637628614160218,
+        "mean_precision": 0.034023480437775096,
+        "mean_recall": 0.9647662537687656,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.1,
+        "mean_iou": 0.06914466655444572,
+        "mean_dice": 0.08934429439148074,
+        "mean_precision": 0.11209948634690697,
+        "mean_recall": 0.9486997787533406,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.15,
+        "mean_iou": 0.07743927496140848,
+        "mean_dice": 0.09718989183451425,
+        "mean_precision": 0.13199086456192982,
+        "mean_recall": 0.9421588993293221,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.2,
+        "mean_iou": 0.34356506589976804,
+        "mean_dice": 0.3635078111369995,
+        "mean_precision": 0.4037771435488476,
+        "mean_recall": 0.9373876379062338,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.25,
+        "mean_iou": 0.7027652594412621,
+        "mean_dice": 0.7229626746320134,
+        "mean_precision": 0.7673559762586841,
+        "mean_recall": 0.9332931471861772,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.3,
+        "mean_iou": 0.8397214623661732,
+        "mean_dice": 0.8600879856337338,
+        "mean_precision": 0.9078600674845468,
+        "mean_recall": 0.9298564443552728,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.35,
+        "mean_iou": 0.892322941439891,
+        "mean_dice": 0.9127916072819467,
+        "mean_precision": 0.9640160606499409,
+        "mean_recall": 0.9264959242694278,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.4,
+        "mean_iou": 0.9121276270387983,
+        "mean_dice": 0.9326274017058692,
+        "mean_precision": 0.9871266054981257,
+        "mean_recall": 0.9234203181829834,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.45,
+        "mean_iou": 0.9136680496552809,
+        "mean_dice": 0.9341305023224373,
+        "mean_precision": 0.991905668162218,
+        "mean_recall": 0.9203776132140766,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.5,
+        "mean_iou": 0.9145140900559399,
+        "mean_dice": 0.9348760930435012,
+        "mean_precision": 0.9957511172125614,
+        "mean_recall": 0.9176096731634662,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.55,
+        "mean_iou": 0.9137066759971821,
+        "mean_dice": 0.9338949293724437,
+        "mean_precision": 0.9978072739531011,
+        "mean_recall": 0.9149396655342658,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.6,
+        "mean_iou": 0.9118058067505282,
+        "mean_dice": 0.9317397726396601,
+        "mean_precision": 0.9990474507104343,
+        "mean_recall": 0.9120442767466415,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.65,
+        "mean_iou": 0.90897687518323,
+        "mean_dice": 0.9285248688195944,
+        "mean_precision": 0.9991003015681317,
+        "mean_recall": 0.9091821289044815,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.7,
+        "mean_iou": 0.9059978251122353,
+        "mean_dice": 0.925023829257263,
+        "mean_precision": 0.9992097390169712,
+        "mean_recall": 0.9061467615450471,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.75,
+        "mean_iou": 0.9027935447299004,
+        "mean_dice": 0.9211208318556836,
+        "mean_precision": 0.9993135095435157,
+        "mean_recall": 0.902902311851099,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.8,
+        "mean_iou": 0.8990371918967692,
+        "mean_dice": 0.9163159187173209,
+        "mean_precision": 0.9995244910637077,
+        "mean_recall": 0.8991026123753593,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.85,
+        "mean_iou": 0.8948762490869028,
+        "mean_dice": 0.9108366367910204,
+        "mean_precision": 0.9996350000470541,
+        "mean_recall": 0.8949175432461225,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.9,
+        "mean_iou": 0.8896196505833919,
+        "mean_dice": 0.9034328855315619,
+        "mean_precision": 0.9997589721612947,
+        "mean_recall": 0.8896424966875743,
+        "samples": 1150
+      },
+      {
+        "threshold": 0.95,
+        "mean_iou": 0.8822377659406099,
+        "mean_dice": 0.8920844257361462,
+        "mean_precision": 0.9999516906772687,
+        "mean_recall": 0.8822423970836832,
+        "samples": 1150
+      }
+    ],
+    "best_by_dice": {
+      "threshold": 0.5,
+      "mean_iou": 0.9145140900559399,
+      "mean_dice": 0.9348760930435012,
+      "mean_precision": 0.9957511172125614,
+      "mean_recall": 0.9176096731634662,
+      "samples": 1150
+    },
+    "best_by_iou": {
+      "threshold": 0.5,
+      "mean_iou": 0.9145140900559399,
+      "mean_dice": 0.9348760930435012,
+      "mean_precision": 0.9957511172125614,
+      "mean_recall": 0.9176096731634662,
+      "samples": 1150
+    }
+  },
+  "num_samples": 1150,
+  "saved_images": 64
+}

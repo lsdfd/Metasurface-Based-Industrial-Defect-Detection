@@ -1,0 +1,25 @@
+{
+  "kernel_index": 37,
+  "branch": "negative",
+  "iterations": 40,
+  "learning_rate": 0.005,
+  "roi_size": 96,
+  "roi_bounds": [
+    749,
+    845,
+    750,
+    846
+  ],
+  "device": "cuda",
+  "final_loss": 2.1111079604452243e-06,
+  "loss_start": 0.00021667229884769768,
+  "metrics": {
+    "mse_l2_normalized": 1.9393482943996787e-06,
+    "relative_l2": 0.13369005918502808,
+    "cosine_similarity": 0.9910634756088257,
+    "target_sum": 11.59091854095459,
+    "simulated_sum": 9215.9970703125,
+    "target_max": 0.3425584137439728,
+    "simulated_max": 134.13357543945312
+  }
+}

@@ -1,0 +1,5 @@
+model,parameters,MACs,note
+Teacher SegDecNet @256,15.63M,21.08G,full electronic teacher baseline
+Teacher SegDecNet @512,15.63M,84.31G,original-resolution teacher estimate
+Student digital proxy @256,60.7K,967.0M,optical conv still counted as digital MACs
+Hybrid student electronic backend,46.3K electronic,23.3M electronic,optical conv assumed implemented optically

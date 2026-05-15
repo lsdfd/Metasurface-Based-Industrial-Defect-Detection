@@ -1,0 +1,8 @@
+{
+  "wavelength_nm": 532.0,
+  "grid_pitch_nm": 586.0,
+  "detector_distance_mm": 2.4,
+  "scale": 2,
+  "sim_size": 1600,
+  "normalize": "paired_max"
+}

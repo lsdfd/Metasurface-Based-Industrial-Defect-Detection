@@ -1,0 +1,7 @@
+comparison,ratio,meaning
+teacher256_params / student_total_params,258x,student has ~258x fewer parameters than teacher
+teacher_params / hybrid_electronic_params,338x,remaining electronic backend parameters vs teacher
+teacher256_MACs / student_digital_MACs,21.8x,all-digital student compute reduction
+student_digital_MACs / hybrid_electronic_MACs,41.5x,electronic MAC reduction after optical frontend
+teacher256_MACs / hybrid_electronic_MACs,905x,remaining electronic MAC reduction vs 256 teacher
+teacher512_MACs / hybrid_electronic_MACs,3618x,remaining electronic MAC reduction vs 512 teacher
