@@ -12,6 +12,7 @@ dagm_optical_distill/
   train_teacher_dagm_class7.sh
   distill_focused_student_sweep.sh
   evaluate_student_visuals.py
+  prepare_dagm_psf_targets.py
   summarize_distill_results.py
 ```
 
@@ -22,6 +23,7 @@ dagm_optical_distill/
 - `train_teacher_dagm_class7.sh`：训练 SegDecNet teacher。
 - `distill_focused_student_sweep.sh`：复现当前最终推荐 student 配置。
 - `evaluate_student_visuals.py`：评估 best checkpoint，并导出可视化和 threshold sweep。
+- `prepare_dagm_psf_targets.py`：把 best optical kernels 拆成 positive/negative PSF targets，并导出超表面设计入口。
 - `summarize_distill_results.py`：从多个 run 的日志中汇总指标。
 
 ## 为什么只保留这些脚本
@@ -81,6 +83,44 @@ python3 dagm_optical_distill/evaluate_student_visuals.py \
   --SAVE_LIMIT 32
 ```
 
+5. 导出 optical kernels 的正负 PSF target。
+
+这个步骤参考 fabric 目录里已经调过的正负卷积 / PSF target 流程。核心原因是 learned optical kernel 是有正有负的 signed convolution，但真实光强响应不能直接表达负权重，所以需要拆成两路：
+
+```text
+K = K_positive - K_negative
+K_positive = max(K, 0)
+K_negative = max(-K, 0)
+```
+
+命令示例：
+
+```bash
+python3 dagm_optical_distill/prepare_dagm_psf_targets.py \
+  --KERNELS ./results-dagm-distill-focused/DAGM/dagm_c7_r256_o64_k15_d4_e12-24-32_seg5_vol3_fg5_t2_m600_ep70/models/best_optical_kernels.npy \
+  --OUTPUT_DIR ./outputs/dagm_c7_best_psf_targets \
+  --SCALE 2 \
+  --SIM_SIZE 1600 \
+  --NORMALIZE paired_max \
+  --SAVE_FIGURES \
+  --PREVIEW_KERNELS 64 \
+  --KERNEL_INDEX 0
+```
+
+输出包括：
+
+```text
+dagm_psf_targets.npz
+psf_config.json
+kernel_stats.json
+kernel_grid_signed.png
+kernel_grid_positive.png
+kernel_grid_negative.png
+psf_backphase_preview.png
+```
+
+其中 `dagm_psf_targets.npz` 是后续接 `卷积核->超表面相位设计代码/` 的主要入口。
+
 ## 当前 best run
 
 ```text
@@ -109,5 +149,6 @@ results-dagm-distill-focused/DAGM/dagm_c7_r256_o64_k15_d4_e12-24-32_seg5_vol3_fg
 - full validation/test；
 - final best checkpoint 可视化；
 - threshold sweep 指标；
-- teacher/student 同 split 对比；
-- optical kernels 的正负 PSF 分解检查。
+- optical kernels 的正负 PSF 分解检查；
+- 接 `卷积核->超表面相位设计代码/` 做 target PSF 到 simulated PSF / phase 的优化；
+- 如果 simulated PSF 偏离 learned kernel，再做 hardware-aware retraining。

@@ -394,6 +394,34 @@ The distillation result is strong, but the system is not finished. Next steps:
 7. Metasurface target preparation:
    Convert normalized positive/negative kernels into target PSFs compatible with the PSF engineering notebook.
 
+   Current implementation:
+
+   ```text
+   dagm_optical_distill/prepare_dagm_psf_targets.py
+   ```
+
+   This script follows the same practical convention used in the fabric branch:
+
+   ```text
+   K_positive = max(K, 0)
+   K_negative = max(-K, 0)
+   K = K_positive - K_negative
+   ```
+
+   The default normalization is `paired_max`, so each positive/negative pair shares one scale. This preserves the relative positive-vs-negative balance inside a signed kernel while making the target PSF values convenient for downstream optical simulation.
+
+   Default PSF export settings:
+
+   ```text
+   SCALE=2
+   SIM_SIZE=1600
+   WAVELENGTH_NM=532
+   GRID_PITCH_NM=586
+   DETECTOR_DISTANCE_MM=2.4
+   ```
+
+   These are starting values inherited from the fabric/metasurface adaptation path, not final physical design claims. They should be revisited when the actual metasurface design constraints are fixed.
+
 8. Optical simulation:
    Use angular-spectrum / PSF engineering code to optimize phase or scatterer geometry and compare target PSF vs simulated PSF.
 
