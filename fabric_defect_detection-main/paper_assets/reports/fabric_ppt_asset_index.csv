@@ -1,0 +1,13 @@
+asset_type,path,suggested_use
+main_figure,figures_main/results/fabric_teacher_student_summary_bar.png,Fabric 主结果总览页
+process_figure,figures_process/threshold_sweep/fabric_r1_threshold_story.png,Fabric 阈值敏感性过程页
+main_figure,figures_main/results/fabric_r1_threshold_comparison.png,Fabric 学生模型阈值对比页
+main_figure,figures_main/compute/fabric_compute_comparison_bar.png,Fabric 计算量与硬件意义页
+main_figure,figures_main/kernels/kernel_grid_signed.png,Fabric optical kernel 总览页
+main_figure,figures_main/kernels/kernel_grid_positive.png,Fabric 正权重 PSF split 页
+main_figure,figures_main/kernels/kernel_grid_negative.png,Fabric 负权重 PSF split 页
+table,tables/fabric_teacher_student_summary.csv,Fabric teacher/student 指标表
+table,tables/fabric_compute_summary.csv,Fabric 参数量与 MACs 表
+table,tables/mock_cmos_summary.csv,Fabric mock CMOS 接口结果表
+raw_result,results/fabric_r1_student_best_threshold_eval.json,Fabric R1 主 student 原始结果
+report,reports/fabric_assets_summary_zh.md,Fabric 资产中文说明

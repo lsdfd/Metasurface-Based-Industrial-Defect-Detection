@@ -1,0 +1,9 @@
+asset_type,path,suggested_use
+main_figure,figures_main/metrics/dagm_full_validation_bar.png,DAGM quantitative result page
+main_figure,figures_main/qualitative_masks/mask_visualization_contact_sheet_12.jpg,DAGM qualitative mask page
+main_figure,figures_main/kernels/kernel_grid_signed.png,kernel visualization page
+main_figure,figures_main/psf_targets/psf_target_center_crop.png,PSF target explanation page
+main_figure,figures_main/metasurface_probe/kernel00_positive_probe.png,metasurface probe example page
+main_figure,figures_main/metasurface_probe/metasurface_probe_cosine_bar.png,metasurface quantitative page
+main_figure,figures_main/compute/compute_comparison_bar.png,compute/hardware意义 page
+process_figure,figures_process/threshold_sweep/dagm_threshold_sweep.png,threshold appendix / process page

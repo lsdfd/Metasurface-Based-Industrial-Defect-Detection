@@ -1,0 +1,32 @@
+{
+  "checkpoint": "models/distillation/student_r1_best.pt",
+  "student_id": "R1 baseline",
+  "architecture": {
+    "input_size": 64,
+    "optical_kernels": 16,
+    "kernel_size": 7,
+    "pooled_size": 6,
+    "hidden_dim": 256,
+    "optical_activation": "relu"
+  },
+  "evaluation_protocol": {
+    "script": "scripts/evaluation/evaluate_student.py",
+    "input_size": 64,
+    "threshold_sweep": true
+  },
+  "val_default": {
+    "threshold": 0.5,
+    "f1": 0.23529411764705882
+  },
+  "val_best_threshold": {
+    "threshold": 0.8999999761581421,
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1": 0.8571428571428571
+  },
+  "notes": [
+    "This is the confirmed Fabric mainline student result.",
+    "The model is threshold-sensitive: default threshold 0.5 looks much worse than best-threshold evaluation.",
+    "This result should be used instead of the previously mixed low-KD results."
+  ]
+}

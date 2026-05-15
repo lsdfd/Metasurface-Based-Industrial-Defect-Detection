@@ -13,6 +13,10 @@ __pycache__/
 
 # Experiment outputs
 outputs/
+!paper_assets/
+!paper_assets/**
+paper_assets/checkpoints/teacher/*.pth
+!paper_assets/checkpoints/teacher/README.md
 
 # macOS noise
 .DS_Store

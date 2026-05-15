@@ -1,0 +1,23 @@
+{
+  "cmos_npz": "outputs/mock_cmos/student_kernel_mock.npz",
+  "student_checkpoint": "models/distillation/student_r1_best.pt",
+  "batch_size": 1,
+  "feature_shape": [
+    1,
+    16,
+    98,
+    98
+  ],
+  "logits": [
+    -4.162868976593018
+  ],
+  "probabilities": [
+    0.015324353240430355
+  ],
+  "reconstruction": {
+    "positive_gain": 1.0,
+    "negative_gain": 1.0,
+    "electronic_bias": 0.0,
+    "apply_relu": true
+  }
+}

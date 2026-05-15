@@ -1,0 +1,2 @@
+student_checkpoint,batch_size,feature_shape,logit,probability,apply_relu
+models/distillation/student_r1_best.pt,1,"[1, 16, 98, 98]",-4.162868976593018,0.015324353240430355,True

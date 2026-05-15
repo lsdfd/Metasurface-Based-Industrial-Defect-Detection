@@ -1,0 +1,4 @@
+model,threshold,precision,recall,f1,notes
+Teacher CNN (reference notebook/mainline),N/A,N/A,N/A,0.975000,用于汇报主线的 teacher 参考值，不与离线脚本口径混用
+R1 Student @ default threshold,0.500,N/A,N/A,0.235294,默认阈值 0.5 下的 student F1
+R1 Student @ best threshold,0.900,0.750000,1.000000,0.857143,Fabric 主线 student 结果

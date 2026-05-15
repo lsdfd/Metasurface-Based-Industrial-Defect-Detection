@@ -1,0 +1,3 @@
+model,input_size,optical_kernels,kernel_size,pooled_size,hidden_dim,optical_activation,threshold_type,threshold,precision,recall,f1,notes
+R1 baseline student,64,16,7,6,256,relu,default,0.5,,,0.23529411764705882,Default threshold underestimates this student.
+R1 baseline student,64,16,7,6,256,relu,best,0.8999999761581421,0.75,1.0,0.8571428571428571,Confirmed Fabric mainline student result.
