@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 paper-style method overview figure
+Primary request: Create a comprehensive graphical abstract for the proposed method: traditional electronic vision models are distilled into a metasurface optical frontend plus lightweight electronic backend for industrial defect detection.
+Scene: Top row shows traditional electronic pipeline: industrial image -> CNN/YOLO/SegDecNet electronic feature extractor -> task head. Middle row shows teacher-student distillation: frozen teacher, trainable optical student, arrows for logits/masks/features/losses. Bottom row shows physical mapping: learned convolution kernels -> positive/negative split -> target PSF -> metasurface phase/radius optimization -> CMOS feature volume -> defect score/mask.
+Composition: A rich multi-stage systems diagram with clearly separated lanes, arrows, model blocks, kernel thumbnails, PSF spots, metasurface plate, CMOS sensor, and small output examples. Leave space for PPT overlay labels and formulas.
+Visual style: polished research-paper figure, white background, deep blue/teal accents, red highlights for defects and loss signals, precise schematic, balanced information density.
+Text policy: no readable embedded text, no fake labels, no equations; the PPT will add exact labels and LaTeX formulas.
+Avoid: no vague concept art, no single big object, no sci-fi spaceship style, no purple-heavy palette.

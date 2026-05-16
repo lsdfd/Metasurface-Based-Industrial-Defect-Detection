@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 case-study infographic for fabric defect binary classification
+Primary request: Create a rich case-study diagram for fabric/AITEX patch-level defect classification with an optical student model.
+Scene: A long fabric texture image is divided into square patches; one patch has a small highlighted defect. The patch flows into an electronic CNN teacher branch and a low-resolution optical student branch. The student branch shows resize to 64x64, a bank of 16 optical kernels, pooling/FC backend, and binary normal/defective score. Add small visual motifs for threshold calibration and kernel export.
+Composition: Organized left-to-right pipeline with teacher and student branches stacked, realistic fabric texture thumbnails, kernel grid icons, binary decision output. Leave empty label zones for PPT overlay text.
+Visual style: paper-quality infographic, white background, blue/teal modules, red defect highlight, clean arrows and subpanels.
+Text policy: no readable embedded text, no fake labels, no equations.
+Avoid: no vague cloth hero photo, no excessive decoration, no dark background.

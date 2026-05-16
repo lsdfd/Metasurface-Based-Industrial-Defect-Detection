@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 future-work roadmap figure for PPT
+Primary request: Create a future-work roadmap visual for extending metasurface optical frontend defect detection toward localization tasks such as PCB, wafer, chip, and YOLO-style detection.
+Scene: A central metasurface-camera module connects to four application tiles: fabric inspection, DAGM-style texture segmentation, PCB/chip defect localization, wafer inspection. Show bounding boxes and masks as output examples, plus small icons for hardware-aware retraining, calibration, simulated PSF feedback, and real optical experiment.
+Composition: Roadmap layout with central system hub and four application branches; rich but clean, suitable for final presentation slide.
+Visual style: scientific roadmap infographic, white background, deep blue/teal palette, restrained red defect annotations, crisp high-quality rendering.
+Text policy: no readable embedded text, no logos, no fake labels; PPT will add exact captions.
+Avoid: no futuristic city, no vague chip glamour shot, no dark background.

@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 research-paper graphical abstract panel for PPT
+Primary request: Create a rich, publication-level infographic about the intersection of industrial defect detection and metasurface optical machine vision frontend.
+Scene: A structured two-column scientific figure. Left column shows industrial inspection pain points: high-resolution fabric/texture images, sparse tiny defects, heavy electronic CNN/YOLO/segmentation computation, edge latency and power constraints. Right column shows metasurface opportunity: illumination, sample, metasurface PSF/convolution bank, CMOS sensor, lightweight electronic backend.
+Composition: Dense but clean academic graphical abstract, multiple small subpanels connected by arrows, ample whitespace for overlay labels added later in PPT. Use realistic fabric/industrial texture patches and a simplified metasurface optical setup.
+Visual style: Nature/IEEE-style clean scientific figure, white background, deep blue/teal technical palette, restrained red for defect marks, crisp vector-like geometry mixed with realistic texture thumbnails.
+Text policy: do not include readable text, letters, logos, or fake labels inside the image; leave visual label areas blank so PPT can add accurate labels.
+Avoid: no single atmospheric hero image, no factory worker, no dark cyberpunk lighting, no purple-dominant gradient, no cluttered stock photo.

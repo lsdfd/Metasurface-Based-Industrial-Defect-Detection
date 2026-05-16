@@ -8,9 +8,9 @@
 presentation/build/metasurface_industrial_defect_detection_v2.pptx
 ```
 
-页数：`29`
+页数：`30`
 
-文件大小：约 `8.4 MB`
+文件大小：约 `9.7 MB`
 
 历史初稿仍保留：
 
@@ -40,10 +40,10 @@ presentation/build/metasurface_industrial_defect_detection_v1.pptx
 
 ```text
 1      封面
-2-7    背景与总体方案
-8-14   Fabric 二分类案例
-15-27  DAGM / SegDecNet 案例
-28-29  总结与未来展望
+2-8    背景与总体方案
+9-15   Fabric 二分类案例
+16-28  DAGM / SegDecNet 案例
+29-30  总结与未来展望
 ```
 
 ## 3. 真实实验素材来源
@@ -75,7 +75,7 @@ mixed-segdec-net-comind2021-master/paper_assets/
 AI 概念图保存在：
 
 ```text
-presentation/ai_images/
+presentation/ai_images_v2/
 ```
 
 当前使用 FAL：
@@ -91,6 +91,19 @@ quality = medium
 ```bash
 python3 presentation/scripts/generate_ai_images_fal.py
 ```
+
+当前 v2 使用的 FAL 图：
+
+```text
+v2_background_infographic.png
+v2_methodology_graphical_abstract.png
+v2_hybrid_optical_architecture.png
+v2_fabric_case_diagram.png
+v2_dagm_case_diagram.png
+v2_future_system_roadmap.png
+```
+
+这些图的 prompt 也保存在同目录的 `*.prompt.txt` 中。
 
 说明：
 
@@ -131,11 +144,12 @@ presentation/build/metasurface_industrial_defect_detection_v2.pptx
 ## 6. v2 相比 v1 的主要修改
 
 - 第一页改为标准文字封面，不再使用 AI 大图。
-- 背景压缩为 1 页，但补充工业检测痛点、传统电子模型、超表面机会和本课题切入点。
+- 背景压缩为 1 页，并重新用 FAL 生成了论文级信息图，补充工业检测痛点、传统电子模型、超表面机会和本课题切入点。
 - 方法论页增加传统工业视觉管线、光电融合架构、蒸馏机制和 kernel-to-PSF 公式。
+- 新增方法总览页，使用 FAL 生成的 `v2_methodology_graphical_abstract.png` 展示传统模型、蒸馏、光学卷积和物理映射的完整链路。
 - 公式统一用 matplotlib mathtext 渲染为透明 PNG，保存在 `presentation/generated_figures/formulas/`。
-- Fabric 开头明确说明是织物 patch 二分类，不输出具体缺陷位置。
-- DAGM 开头明确说明是工业纹理缺陷分类 + 像素级 mask 分割。
+- Fabric 开头使用重新生成的 case-study infographic，并明确说明是织物 patch 二分类，不输出具体缺陷位置。
+- DAGM 开头使用重新生成的 case-study infographic，并明确说明是工业纹理缺陷分类 + 像素级 mask 分割。
 - Teacher / student 架构页重新绘制，明确光学前端和电子后端边界。
 - 数据页保留 v1 中较好的真实结果图，但补充解释文字和表格。
 

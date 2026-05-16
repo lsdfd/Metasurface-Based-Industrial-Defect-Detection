@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT_DIR = ROOT / "presentation" / "build"
 FORMULA_DIR = ROOT / "presentation" / "generated_figures" / "formulas"
 AI_DIR = ROOT / "presentation" / "ai_images"
+AI_V2_DIR = ROOT / "presentation" / "ai_images_v2"
 FABRIC = ROOT / "fabric_defect_detection-main" / "paper_assets"
 DAGM = ROOT / "mixed-segdec-net-comind2021-master" / "paper_assets"
 
@@ -212,7 +213,7 @@ def cover(prs):
 
 def background_slide(prs):
     slide = blank(prs, "背景：工业缺陷检测与超表面机器视觉前端的交叉点", "工业质检需要高速低功耗视觉前端，而超表面提供了把早期卷积前移到成像链路的硬件入口。", "背景")
-    add_image_frame(slide, AI_DIR / "background_problem.png", Inches(0.62), Inches(1.18), Inches(4.35), Inches(3.6))
+    add_image_frame(slide, AI_V2_DIR / "v2_background_infographic.png", Inches(0.62), Inches(1.18), Inches(4.35), Inches(3.6))
     add_card(slide, Inches(5.2), Inches(1.15), Inches(3.45), Inches(1.25), "工业检测痛点", "高分辨率图像带来大量 early convolution MACs；缺陷往往稀疏、细小，边缘部署还受功耗和延迟约束。", accent=RED)
     add_card(slide, Inches(8.95), Inches(1.15), Inches(3.65), Inches(1.25), "传统电子模型", "CNN classifier、U-Net/SegNet/SegDecNet、YOLO 等模型通常依赖电子端卷积前端。", accent=BLUE)
     add_card(slide, Inches(5.2), Inches(2.75), Inches(3.45), Inches(1.25), "超表面机会", "通过 PSF / optical convolution bank 在成像阶段编码早期特征，减少后端电子计算压力。", accent=TEAL)
@@ -243,7 +244,7 @@ def hybrid_architecture_slide(prs):
         add_flow_box(slide, Inches(x), Inches(1.5), Inches(1.45), Inches(0.9), label, color=color, size=9.5)
         if i < len(labels) - 1:
             add_arrow(slide, Inches(x + 1.48), Inches(1.95), Inches(xs[i + 1] - 0.04), Inches(1.95))
-    add_image_frame(slide, AI_DIR / "hybrid_optical_system.png", Inches(0.65), Inches(3.0), Inches(5.1), Inches(2.5))
+    add_image_frame(slide, AI_V2_DIR / "v2_hybrid_optical_architecture.png", Inches(0.65), Inches(3.0), Inches(5.1), Inches(2.5))
     add_card(slide, Inches(6.1), Inches(3.05), Inches(3.0), Inches(1.05), "光学端做什么", "实现 CNN-like convolution / PSF feature encoding，输出多通道光学响应。", accent=TEAL)
     add_card(slide, Inches(9.45), Inches(3.05), Inches(3.0), Inches(1.05), "电子端做什么", "负责 calibration、非线性、分割/分类/检测 head，保持任务表达能力。", accent=BLUE)
     add_card(slide, Inches(6.1), Inches(4.55), Inches(6.35), Inches(1.0), "表述边界", "我们不声称“超表面实现完整神经网络”，而是构建 hybrid optical-electronic defect detection。", accent=NAVY)
@@ -284,9 +285,17 @@ def two_cases_slide(prs):
     add_card(slide, Inches(6.9), Inches(1.2), Inches(5.8), Inches(4.6), "案例二：DAGM Class7 纹理缺陷分割", "工业场景：纹理表面异常/划痕类缺陷\n输入：灰度工业纹理图像\n输出：image-level defect score + pixel-level mask\n模型：SegDecNet teacher -> optical student\n作用：验证高性能分割、PSF target 和 metasurface probe 闭环", accent=BLUE, body_size=11)
 
 
+def methodology_overview_slide(prs):
+    slide = blank(prs, "方法总览：从传统电子模型到光电融合 student", "这张图对应本课题的整体方法主图：传统模型、蒸馏、光学卷积和物理映射在同一条链路中。", "方法")
+    add_image_frame(slide, AI_V2_DIR / "v2_methodology_graphical_abstract.png", Inches(0.6), Inches(1.12), Inches(7.25), Inches(4.75))
+    add_card(slide, Inches(8.15), Inches(1.25), Inches(4.25), Inches(1.05), "传统模型", "CNN / YOLO / SegDecNet 在电子端完成特征提取和任务 head。", accent=BLUE)
+    add_card(slide, Inches(8.15), Inches(2.65), Inches(4.25), Inches(1.05), "蒸馏迁移", "Teacher 输出、mask 和中间 volume 监督 optical student。", accent=RED)
+    add_card(slide, Inches(8.15), Inches(4.05), Inches(4.25), Inches(1.05), "物理映射", "Learned kernels 经正负拆分后转为 PSF / metasurface optimization target。", accent=TEAL)
+
+
 def fabric_intro_slide(prs):
     slide = blank(prs, "Fabric / AITEX：织物表面缺陷的 patch 二分类", "这个案例检测的是织物 patch 是否存在缺陷，不输出缺陷具体位置。", "Fabric")
-    add_image_frame(slide, FABRIC / "figures_main" / "results" / "ui.png", Inches(0.65), Inches(1.18), Inches(4.45), Inches(3.95))
+    add_image_frame(slide, AI_V2_DIR / "v2_fabric_case_diagram.png", Inches(0.65), Inches(1.18), Inches(4.45), Inches(3.95))
     add_flow_box(slide, Inches(5.45), Inches(1.3), Inches(1.65), Inches(0.75), "Long fabric\nimage", color=NAVY, size=9.5)
     add_flow_box(slide, Inches(7.35), Inches(1.3), Inches(1.65), Inches(0.75), "256x256\npatches", color=TEAL, size=9.5)
     add_flow_box(slide, Inches(9.25), Inches(1.3), Inches(1.65), Inches(0.75), "Binary\nclassifier", color=BLUE, size=9.5)
@@ -356,7 +365,7 @@ def fabric_summary_slide(prs):
 
 def dagm_intro_slide(prs):
     slide = blank(prs, "DAGM Class7：工业纹理缺陷的分类 + 像素级分割", "这个案例不仅判断有没有缺陷，还输出缺陷区域 mask，是当前主结果。", "DAGM")
-    add_image_frame(slide, DAGM / "figures_main" / "qualitative_masks" / "mask_visualization_contact_sheet_12.jpg", Inches(0.65), Inches(1.15), Inches(6.65), Inches(4.35))
+    add_image_frame(slide, AI_V2_DIR / "v2_dagm_case_diagram.png", Inches(0.65), Inches(1.15), Inches(6.65), Inches(4.35))
     add_card(slide, Inches(7.65), Inches(1.25), Inches(4.75), Inches(1.0), "工业场景", "DAGM 是工业纹理表面缺陷 benchmark；Class7 可视作纹理异常/划痕类检测场景。", accent=BLUE)
     add_card(slide, Inches(7.65), Inches(2.6), Inches(4.75), Inches(1.0), "输入输出", "输入灰度纹理图像；输出 image-level defect score 和 pixel-level defect mask。", accent=TEAL)
     add_card(slide, Inches(7.65), Inches(3.95), Inches(4.75), Inches(1.0), "为什么是主结果", "它比 Fabric 更复杂，能验证蒸馏、分割、kernel、PSF 和硬件意义的完整闭环。", accent=NAVY)
@@ -496,7 +505,7 @@ def comparison_summary_slide(prs):
 
 def future_slide(prs):
     slide = blank(prs, "未来工作：从 digital student 走向真实光电闭环", "下一阶段重点是把 simulated PSF 放回模型链路评估性能下降。", "展望")
-    add_image_frame(slide, AI_DIR / "future_yolo_chip_inspection.png", Inches(0.65), Inches(1.18), Inches(4.65), Inches(3.25))
+    add_image_frame(slide, AI_V2_DIR / "v2_future_system_roadmap.png", Inches(0.65), Inches(1.18), Inches(4.65), Inches(3.25))
     rows = [
         ["Simulated PSF student", "用 simulated PSF 替代 learned kernels 重新评估性能"],
         ["Hardware-aware retraining", "加入噪声、偏移、制造误差和 calibration"],
@@ -516,6 +525,7 @@ def build() -> None:
     cover(prs)
     background_slide(prs)
     traditional_pipeline_slide(prs)
+    methodology_overview_slide(prs)
     hybrid_architecture_slide(prs)
     distillation_method_slide(prs)
     kernel_to_metasurface_slide(prs)

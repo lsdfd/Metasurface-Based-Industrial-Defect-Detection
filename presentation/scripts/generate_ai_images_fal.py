@@ -65,6 +65,66 @@ Visual style: clean research concept visual, realistic electronic surfaces, whit
 Composition: inspection sample dominates center, optical module on one side, keep it uncluttered and readable for a slide.
 Avoid: no readable text, no brand names, no futuristic city, no purple-dominant palette, no noisy factory scene.
 """,
+    "v2_background_infographic": """
+Use case: scientific-educational
+Asset type: 16:9 research-paper graphical abstract panel for PPT
+Primary request: Create a rich, publication-level infographic about the intersection of industrial defect detection and metasurface optical machine vision frontend.
+Scene: A structured two-column scientific figure. Left column shows industrial inspection pain points: high-resolution fabric/texture images, sparse tiny defects, heavy electronic CNN/YOLO/segmentation computation, edge latency and power constraints. Right column shows metasurface opportunity: illumination, sample, metasurface PSF/convolution bank, CMOS sensor, lightweight electronic backend.
+Composition: Dense but clean academic graphical abstract, multiple small subpanels connected by arrows, ample whitespace for overlay labels added later in PPT. Use realistic fabric/industrial texture patches and a simplified metasurface optical setup.
+Visual style: Nature/IEEE-style clean scientific figure, white background, deep blue/teal technical palette, restrained red for defect marks, crisp vector-like geometry mixed with realistic texture thumbnails.
+Text policy: do not include readable text, letters, logos, or fake labels inside the image; leave visual label areas blank so PPT can add accurate labels.
+Avoid: no single atmospheric hero image, no factory worker, no dark cyberpunk lighting, no purple-dominant gradient, no cluttered stock photo.
+""",
+    "v2_methodology_graphical_abstract": """
+Use case: scientific-educational
+Asset type: 16:9 paper-style method overview figure
+Primary request: Create a comprehensive graphical abstract for the proposed method: traditional electronic vision models are distilled into a metasurface optical frontend plus lightweight electronic backend for industrial defect detection.
+Scene: Top row shows traditional electronic pipeline: industrial image -> CNN/YOLO/SegDecNet electronic feature extractor -> task head. Middle row shows teacher-student distillation: frozen teacher, trainable optical student, arrows for logits/masks/features/losses. Bottom row shows physical mapping: learned convolution kernels -> positive/negative split -> target PSF -> metasurface phase/radius optimization -> CMOS feature volume -> defect score/mask.
+Composition: A rich multi-stage systems diagram with clearly separated lanes, arrows, model blocks, kernel thumbnails, PSF spots, metasurface plate, CMOS sensor, and small output examples. Leave space for PPT overlay labels and formulas.
+Visual style: polished research-paper figure, white background, deep blue/teal accents, red highlights for defects and loss signals, precise schematic, balanced information density.
+Text policy: no readable embedded text, no fake labels, no equations; the PPT will add exact labels and LaTeX formulas.
+Avoid: no vague concept art, no single big object, no sci-fi spaceship style, no purple-heavy palette.
+""",
+    "v2_hybrid_optical_architecture": """
+Use case: scientific-educational
+Asset type: 16:9 detailed optical-electronic architecture figure for PPT
+Primary request: Render a detailed hybrid optical-electronic defect inspection architecture suitable for a thesis presentation.
+Scene: Left-to-right optical bench: LED/laser illumination -> industrial sample with tiny defect -> metasurface optical convolution plate with nanostructure inset -> relay optics -> CMOS sensor producing multiple feature-map tiles -> calibration/normalization module -> compact electronic backend -> outputs: binary defect score and segmentation mask.
+Composition: One clear horizontal architecture diagram with multiple modules, realistic but clean optical paths, small feature-map stack after sensor, output examples at the right. Reserve blank space near each module for overlay labels.
+Visual style: accurate scientific apparatus illustration, white/light-gray background, deep blue and teal beam paths, subtle red defect highlight, crisp high-resolution details.
+Text policy: no readable text or labels in the generated image; no logos.
+Avoid: no dark lab photo, no generic factory line, no unrealistic giant chip, no purple-dominant color scheme.
+""",
+    "v2_fabric_case_diagram": """
+Use case: scientific-educational
+Asset type: 16:9 case-study infographic for fabric defect binary classification
+Primary request: Create a rich case-study diagram for fabric/AITEX patch-level defect classification with an optical student model.
+Scene: A long fabric texture image is divided into square patches; one patch has a small highlighted defect. The patch flows into an electronic CNN teacher branch and a low-resolution optical student branch. The student branch shows resize to 64x64, a bank of 16 optical kernels, pooling/FC backend, and binary normal/defective score. Add small visual motifs for threshold calibration and kernel export.
+Composition: Organized left-to-right pipeline with teacher and student branches stacked, realistic fabric texture thumbnails, kernel grid icons, binary decision output. Leave empty label zones for PPT overlay text.
+Visual style: paper-quality infographic, white background, blue/teal modules, red defect highlight, clean arrows and subpanels.
+Text policy: no readable embedded text, no fake labels, no equations.
+Avoid: no vague cloth hero photo, no excessive decoration, no dark background.
+""",
+    "v2_dagm_case_diagram": """
+Use case: scientific-educational
+Asset type: 16:9 case-study infographic for DAGM SegDecNet distillation
+Primary request: Create a rich case-study diagram for DAGM Class7 industrial texture defect segmentation using a SegDecNet teacher and optical student.
+Scene: Grayscale industrial texture image with subtle defect; teacher branch shows SegDecNet shared convolution volume splitting into segmentation mask and classification score; student branch shows optical convolution bank, FeatureNorm/ReLU, pooling, segmentation head, concat with volume, extractor and FC classifier. Include output examples: heatmap mask overlay and defect score.
+Composition: Dense but readable two-branch architecture figure, teacher on top, optical student below, arrows for distillation signals between corresponding outputs/features. Leave label spaces for PPT overlay.
+Visual style: publication-ready technical diagram, white background, deep blue teacher modules, teal optical frontend, red defect/mask highlights, clean geometric blocks and small realistic texture thumbnails.
+Text policy: no readable embedded text, no fake labels, no formulas.
+Avoid: no generic abstract neural network blob, no dark sci-fi style, no purple-dominant palette.
+""",
+    "v2_future_system_roadmap": """
+Use case: scientific-educational
+Asset type: 16:9 future-work roadmap figure for PPT
+Primary request: Create a future-work roadmap visual for extending metasurface optical frontend defect detection toward localization tasks such as PCB, wafer, chip, and YOLO-style detection.
+Scene: A central metasurface-camera module connects to four application tiles: fabric inspection, DAGM-style texture segmentation, PCB/chip defect localization, wafer inspection. Show bounding boxes and masks as output examples, plus small icons for hardware-aware retraining, calibration, simulated PSF feedback, and real optical experiment.
+Composition: Roadmap layout with central system hub and four application branches; rich but clean, suitable for final presentation slide.
+Visual style: scientific roadmap infographic, white background, deep blue/teal palette, restrained red defect annotations, crisp high-quality rendering.
+Text policy: no readable embedded text, no logos, no fake labels; PPT will add exact captions.
+Avoid: no futuristic city, no vague chip glamour shot, no dark background.
+""",
 }
 
 

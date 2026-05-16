@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 case-study infographic for DAGM SegDecNet distillation
+Primary request: Create a rich case-study diagram for DAGM Class7 industrial texture defect segmentation using a SegDecNet teacher and optical student.
+Scene: Grayscale industrial texture image with subtle defect; teacher branch shows SegDecNet shared convolution volume splitting into segmentation mask and classification score; student branch shows optical convolution bank, FeatureNorm/ReLU, pooling, segmentation head, concat with volume, extractor and FC classifier. Include output examples: heatmap mask overlay and defect score.
+Composition: Dense but readable two-branch architecture figure, teacher on top, optical student below, arrows for distillation signals between corresponding outputs/features. Leave label spaces for PPT overlay.
+Visual style: publication-ready technical diagram, white background, deep blue teacher modules, teal optical frontend, red defect/mask highlights, clean geometric blocks and small realistic texture thumbnails.
+Text policy: no readable embedded text, no fake labels, no formulas.
+Avoid: no generic abstract neural network blob, no dark sci-fi style, no purple-dominant palette.
