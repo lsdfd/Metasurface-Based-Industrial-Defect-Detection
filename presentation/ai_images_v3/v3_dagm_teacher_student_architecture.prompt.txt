@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 model architecture figure for DAGM SegDecNet distillation
+Primary request: Generate a detailed teacher-student architecture diagram for DAGM Class7 industrial texture defect segmentation.
+Scene: Top branch: SegDecNet teacher with input image, shared convolution backbone volume, segmentation head, feature extractor, FC classifier, outputs mask and defect score. Bottom branch: optical student with optical convolution bank of 64 kernels 15x15, FeatureNorm/ReLU, AvgPool, segmentation head, concat volume plus mask, extractor and FC classifier. Show distillation arrows for volume, mask, and classification score.
+Composition: two horizontal architecture branches with matched modules and distillation arrows. Include small texture image thumbnail, feature volume tiles, mask heatmap, and output score icon. It must be accurate and readable as a model architecture figure.
+Visual style: thesis/paper quality infographic, white background, deep blue teacher blocks, teal optical frontend, blue electronic backend, red loss arrows.
+Text policy: short English labels allowed: Teacher, Student, Volume KD, Mask KD, Score KD, 64 kernels, 15x15. No long text, no fake equations, no logos.
+Avoid: no abstract neural network blob, no unreadable tiny labels, no dark sci-fi palette.

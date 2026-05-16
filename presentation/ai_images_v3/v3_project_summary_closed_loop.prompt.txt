@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 conclusion graphical summary
+Primary request: Generate a clean closed-loop summary figure for a metasurface-based industrial defect detection project.
+Scene: A circular or left-to-right closed loop: electronic teacher, optical student, learned kernels, positive/negative split, PSF target, metasurface feasibility probe, lightweight electronic backend, defect outputs. Include two small case icons for Fabric binary classification and DAGM segmentation.
+Composition: one polished summary diagram with minimal text labels, visually conveying that the project connects algorithm distillation, optical frontend design, and physical feasibility verification.
+Visual style: high-quality thesis defense summary figure, white background, deep blue/teal palette, red defect highlights, elegant and not cluttered.
+Text policy: short English labels allowed only. No long text, no logos, no equations.
+Avoid: no atmospheric poster, no dark sci-fi, no excessive decorative elements.

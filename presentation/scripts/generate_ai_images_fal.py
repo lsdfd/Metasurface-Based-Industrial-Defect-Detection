@@ -125,6 +125,76 @@ Visual style: scientific roadmap infographic, white background, deep blue/teal p
 Text policy: no readable embedded text, no logos, no fake labels; PPT will add exact captions.
 Avoid: no futuristic city, no vague chip glamour shot, no dark background.
 """,
+    "v3_distillation_training_mechanism": """
+Use case: scientific-educational
+Asset type: 16:9 paper-level method figure for a thesis presentation
+Primary request: Generate a clean, complete knowledge distillation mechanism diagram for a hybrid optical-electronic defect detection model.
+Scene: A frozen electronic teacher model on the top branch and a trainable optical student model on the bottom branch. Teacher accepts industrial defect images and outputs logits, segmentation mask, and intermediate feature volume. Student contains a metasurface optical convolution bank, CMOS feature maps, calibration, lightweight electronic backend, and outputs defect score and mask. Show distillation arrows from teacher outputs/features to student outputs/features, and a compact loss aggregation node.
+Composition: one self-contained publication-style diagram, not a hero illustration. Use two horizontal branches, clear arrows, small feature map tiles, mask thumbnails, and kernel/PSF icons. Leave modest whitespace for PPT title; diagram itself should visually explain the process.
+Visual style: precise academic infographic, white background, deep blue teacher blocks, teal optical student blocks, red loss arrows, restrained and elegant.
+Text policy: very short English labels are allowed only if clean and readable, such as Teacher, Student, KD, Loss, Mask, Volume; no long sentences, no fake equations, no logos.
+Avoid: no dense unreadable microtext, no dark background, no sci-fi style, no purple-dominant palette.
+""",
+    "v3_kernel_to_psf_mapping": """
+Use case: scientific-educational
+Asset type: 16:9 paper-level physical mapping figure
+Primary request: Generate a clean scientific figure showing how a learned signed convolution kernel is mapped into metasurface PSF targets.
+Scene: A learned kernel grid splits into positive and negative branches; each branch becomes a target PSF intensity pattern; then an optimization block adjusts metasurface phase/radius; finally simulated PSF is compared with target PSF on a detector plane.
+Composition: left-to-right pipeline with two parallel positive/negative branches in the middle, small kernel heatmaps, PSF spots, metasurface nanostructure inset, detector-plane comparison. This should look like a paper Figure 1 subpanel, not a decorative concept image.
+Visual style: white background, blue/teal scientific blocks, red/amber for negative branch, crisp arrows, high information density but readable.
+Text policy: short English labels are allowed: Signed kernel, Positive, Negative, Target PSF, Metasurface, Simulated PSF. No long text, no equations, no logos.
+Avoid: no random abstract light art, no dark background, no fake dense unreadable labels.
+""",
+    "v3_case_overview_two_examples": """
+Use case: scientific-educational
+Asset type: 16:9 two-case overview figure
+Primary request: Generate a clean comparison figure showing two industrial defect detection examples in this project: Fabric patch binary classification and DAGM texture defect segmentation.
+Scene: Left half shows fabric roll / textile texture image split into patches, with one defective patch and binary OK/NG output. Right half shows grayscale industrial texture image with defect mask overlay and segmentation output. Between them, a shared pipeline shows electronic teacher to optical student to metasurface PSF.
+Composition: two large case panels side-by-side, unified by a small central method ribbon. Clear visual distinction: Fabric equals binary patch classification; DAGM equals pixel-level segmentation.
+Visual style: thesis-quality infographic, white background, blue/teal modules, red defect highlights, clean scientific layout.
+Text policy: short English labels allowed: Fabric, Binary, DAGM, Mask, Optical student. No long text, no logos.
+Avoid: no decorative factory scene, no dark theme, no clutter.
+""",
+    "v3_fabric_teacher_student_architecture": """
+Use case: scientific-educational
+Asset type: 16:9 model architecture figure for fabric defect classification
+Primary request: Generate a detailed but clean teacher-student architecture diagram for fabric/AITEX patch binary classification.
+Scene: Input fabric image is resized/split into patches. Top branch: electronic CNN teacher with convolution blocks and FC classifier outputs defect probability. Bottom branch: optical student with 64x64 input, optical convolution bank with 16 kernels of 7x7, pooling, small FC backend, sigmoid binary score. Show learned kernels exported to positive/negative PSF split.
+Composition: top teacher branch and bottom student branch, with arrows and a small KD arrow between outputs. Include kernel grid and threshold calibration icon. Use one coherent architecture diagram.
+Visual style: publication-ready model diagram, white background, blue teacher branch, teal optical student branch, red defect output.
+Text policy: short English labels allowed, including 64x64, 16 kernels, 7x7, FC, Binary score. No long sentences, no logos.
+Avoid: no photorealistic-only scene, no cluttered text, no dark background.
+""",
+    "v3_dagm_teacher_student_architecture": """
+Use case: scientific-educational
+Asset type: 16:9 model architecture figure for DAGM SegDecNet distillation
+Primary request: Generate a detailed teacher-student architecture diagram for DAGM Class7 industrial texture defect segmentation.
+Scene: Top branch: SegDecNet teacher with input image, shared convolution backbone volume, segmentation head, feature extractor, FC classifier, outputs mask and defect score. Bottom branch: optical student with optical convolution bank of 64 kernels 15x15, FeatureNorm/ReLU, AvgPool, segmentation head, concat volume plus mask, extractor and FC classifier. Show distillation arrows for volume, mask, and classification score.
+Composition: two horizontal architecture branches with matched modules and distillation arrows. Include small texture image thumbnail, feature volume tiles, mask heatmap, and output score icon. It must be accurate and readable as a model architecture figure.
+Visual style: thesis/paper quality infographic, white background, deep blue teacher blocks, teal optical frontend, blue electronic backend, red loss arrows.
+Text policy: short English labels allowed: Teacher, Student, Volume KD, Mask KD, Score KD, 64 kernels, 15x15. No long text, no fake equations, no logos.
+Avoid: no abstract neural network blob, no unreadable tiny labels, no dark sci-fi palette.
+""",
+    "v3_two_stage_dagm_training": """
+Use case: scientific-educational
+Asset type: 16:9 training protocol figure
+Primary request: Generate a clean two-stage distillation training protocol diagram for DAGM optical student.
+Scene: Stage 1 focuses on optical frontend warm-up with volume KD and segmentation KD. Stage 2 performs joint optimization with task loss, classification KD, segmentation KD, and volume KD. Show a timeline from Stage 1 to Stage 2, teacher frozen above, student trainable below, and losses connected to relevant outputs.
+Composition: horizontal timeline with two large stages, compact teacher/student mini-diagrams, arrows for losses, small icons for mask, volume, classification score.
+Visual style: academic workflow diagram, white background, teal/blue stages, red loss arrows, clean readable layout.
+Text policy: short English labels allowed: Stage 1, Stage 2, Volume KD, Seg KD, Cls KD, Task. No long sentences, no equations.
+Avoid: no messy flowchart, no dark background, no fake code.
+""",
+    "v3_project_summary_closed_loop": """
+Use case: scientific-educational
+Asset type: 16:9 conclusion graphical summary
+Primary request: Generate a clean closed-loop summary figure for a metasurface-based industrial defect detection project.
+Scene: A circular or left-to-right closed loop: electronic teacher, optical student, learned kernels, positive/negative split, PSF target, metasurface feasibility probe, lightweight electronic backend, defect outputs. Include two small case icons for Fabric binary classification and DAGM segmentation.
+Composition: one polished summary diagram with minimal text labels, visually conveying that the project connects algorithm distillation, optical frontend design, and physical feasibility verification.
+Visual style: high-quality thesis defense summary figure, white background, deep blue/teal palette, red defect highlights, elegant and not cluttered.
+Text policy: short English labels allowed only. No long text, no logos, no equations.
+Avoid: no atmospheric poster, no dark sci-fi, no excessive decorative elements.
+""",
 }
 
 

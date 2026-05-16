@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 training protocol figure
+Primary request: Generate a clean two-stage distillation training protocol diagram for DAGM optical student.
+Scene: Stage 1 focuses on optical frontend warm-up with volume KD and segmentation KD. Stage 2 performs joint optimization with task loss, classification KD, segmentation KD, and volume KD. Show a timeline from Stage 1 to Stage 2, teacher frozen above, student trainable below, and losses connected to relevant outputs.
+Composition: horizontal timeline with two large stages, compact teacher/student mini-diagrams, arrows for losses, small icons for mask, volume, classification score.
+Visual style: academic workflow diagram, white background, teal/blue stages, red loss arrows, clean readable layout.
+Text policy: short English labels allowed: Stage 1, Stage 2, Volume KD, Seg KD, Cls KD, Task. No long sentences, no equations.
+Avoid: no messy flowchart, no dark background, no fake code.

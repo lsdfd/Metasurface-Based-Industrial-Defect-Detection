@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 two-case overview figure
+Primary request: Generate a clean comparison figure showing two industrial defect detection examples in this project: Fabric patch binary classification and DAGM texture defect segmentation.
+Scene: Left half shows fabric roll / textile texture image split into patches, with one defective patch and binary OK/NG output. Right half shows grayscale industrial texture image with defect mask overlay and segmentation output. Between them, a shared pipeline shows electronic teacher to optical student to metasurface PSF.
+Composition: two large case panels side-by-side, unified by a small central method ribbon. Clear visual distinction: Fabric equals binary patch classification; DAGM equals pixel-level segmentation.
+Visual style: thesis-quality infographic, white background, blue/teal modules, red defect highlights, clean scientific layout.
+Text policy: short English labels allowed: Fabric, Binary, DAGM, Mask, Optical student. No long text, no logos.
+Avoid: no decorative factory scene, no dark theme, no clutter.

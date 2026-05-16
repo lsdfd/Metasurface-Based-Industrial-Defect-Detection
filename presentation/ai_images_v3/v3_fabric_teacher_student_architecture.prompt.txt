@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 model architecture figure for fabric defect classification
+Primary request: Generate a detailed but clean teacher-student architecture diagram for fabric/AITEX patch binary classification.
+Scene: Input fabric image is resized/split into patches. Top branch: electronic CNN teacher with convolution blocks and FC classifier outputs defect probability. Bottom branch: optical student with 64x64 input, optical convolution bank with 16 kernels of 7x7, pooling, small FC backend, sigmoid binary score. Show learned kernels exported to positive/negative PSF split.
+Composition: top teacher branch and bottom student branch, with arrows and a small KD arrow between outputs. Include kernel grid and threshold calibration icon. Use one coherent architecture diagram.
+Visual style: publication-ready model diagram, white background, blue teacher branch, teal optical student branch, red defect output.
+Text policy: short English labels allowed, including 64x64, 16 kernels, 7x7, FC, Binary score. No long sentences, no logos.
+Avoid: no photorealistic-only scene, no cluttered text, no dark background.

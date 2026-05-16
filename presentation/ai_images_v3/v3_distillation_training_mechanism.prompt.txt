@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 paper-level method figure for a thesis presentation
+Primary request: Generate a clean, complete knowledge distillation mechanism diagram for a hybrid optical-electronic defect detection model.
+Scene: A frozen electronic teacher model on the top branch and a trainable optical student model on the bottom branch. Teacher accepts industrial defect images and outputs logits, segmentation mask, and intermediate feature volume. Student contains a metasurface optical convolution bank, CMOS feature maps, calibration, lightweight electronic backend, and outputs defect score and mask. Show distillation arrows from teacher outputs/features to student outputs/features, and a compact loss aggregation node.
+Composition: one self-contained publication-style diagram, not a hero illustration. Use two horizontal branches, clear arrows, small feature map tiles, mask thumbnails, and kernel/PSF icons. Leave modest whitespace for PPT title; diagram itself should visually explain the process.
+Visual style: precise academic infographic, white background, deep blue teacher blocks, teal optical student blocks, red loss arrows, restrained and elegant.
+Text policy: very short English labels are allowed only if clean and readable, such as Teacher, Student, KD, Loss, Mask, Volume; no long sentences, no fake equations, no logos.
+Avoid: no dense unreadable microtext, no dark background, no sci-fi style, no purple-dominant palette.

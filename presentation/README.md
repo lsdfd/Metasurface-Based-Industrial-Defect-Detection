@@ -2,20 +2,21 @@
 
 更新时间：2026-05-16
 
-当前 PPT：
+当前推荐 PPT：
 
 ```text
-presentation/build/metasurface_industrial_defect_detection_v2.pptx
+presentation/build/metasurface_industrial_defect_detection_v3.pptx
 ```
 
 页数：`30`
 
-文件大小：约 `9.7 MB`
+文件大小：约 `14.6 MB`
 
-历史初稿仍保留：
+历史版本仍保留：
 
 ```text
 presentation/build/metasurface_industrial_defect_detection_v1.pptx
+presentation/build/metasurface_industrial_defect_detection_v2.pptx
 ```
 
 ## 1. 主题
@@ -75,6 +76,7 @@ mixed-segdec-net-comind2021-master/paper_assets/
 AI 概念图保存在：
 
 ```text
+presentation/ai_images_v3/
 presentation/ai_images_v2/
 ```
 
@@ -105,6 +107,18 @@ v2_future_system_roadmap.png
 
 这些图的 prompt 也保存在同目录的 `*.prompt.txt` 中。
 
+当前 v3 额外使用的 FAL 图：
+
+```text
+v3_distillation_training_mechanism.png
+v3_kernel_to_psf_mapping.png
+v3_case_overview_two_examples.png
+v3_fabric_teacher_student_architecture.png
+v3_dagm_teacher_student_architecture.png
+v3_two_stage_dagm_training.png
+v3_project_summary_closed_loop.png
+```
+
 说明：
 
 - 脚本先读取环境变量 `FAL_KEY` / `FAL_API_KEY`
@@ -114,7 +128,13 @@ v2_future_system_roadmap.png
 
 ## 5. PPT 生成脚本
 
-PPT v2 由固定版式脚本生成：
+PPT v3 由固定版式脚本生成：
+
+```bash
+MPLCONFIGDIR=/private/tmp/mpl python3 presentation/scripts/build_ppt_v3.py
+```
+
+PPT v2 脚本：
 
 ```bash
 MPLCONFIGDIR=/private/tmp/mpl python3 presentation/scripts/build_ppt_v2.py
@@ -130,6 +150,7 @@ python3 presentation/scripts/build_ppt.py
 
 ```text
 presentation/build/metasurface_industrial_defect_detection_v2.pptx
+presentation/build/metasurface_industrial_defect_detection_v3.pptx
 ```
 
 版式原则：
@@ -153,15 +174,23 @@ presentation/build/metasurface_industrial_defect_detection_v2.pptx
 - Teacher / student 架构页重新绘制，明确光学前端和电子后端边界。
 - 数据页保留 v1 中较好的真实结果图，但补充解释文字和表格。
 
-## 7. 当前版本注意事项
+## 7. v3 相比 v2 的主要修改
+
+- 只要不是原始实验数据图，尽量改用 FAL 生成的完整论文级配图。
+- 每页主体控制为 `1` 张大图或 `2` 张并排图，不再用大量文本框拼页面。
+- 所有页面底部保留一句总结，用于汇报时快速收束该页观点。
+- 新增 v3 FAL 图覆盖蒸馏机制、kernel-to-PSF、案例总览、Fabric 架构、DAGM 架构、两阶段训练和项目闭环。
+- Fabric 和 DAGM 的真实 assets 全部尽量纳入 PPT，包括结果、threshold、kernel、PSF、probe、compute 和关键表格。
+
+## 8. 当前版本注意事项
 
 - 这是一版可汇报的初稿，不是最终美化版。
 - Fabric 主线使用 `R1 student best threshold F1=0.8571`。
 - DAGM 主线使用 full validation `IoU=0.9145, Dice=0.9349`。
 - Teacher 大权重没有推送到 GitHub，避免超过 GitHub 单文件限制。
-- 后续如果要微调 PPT，优先改 `presentation/scripts/build_ppt_v2.py`，再重新生成。
+- 后续如果要微调 PPT，优先改 `presentation/scripts/build_ppt_v3.py`，再重新生成。
 
-## 8. 下一步建议
+## 9. 下一步建议
 
 1. 人工快速翻一遍 PPT，检查中文标题和导师关注点。
 2. 根据实际汇报时间删减或合并 2-3 页。

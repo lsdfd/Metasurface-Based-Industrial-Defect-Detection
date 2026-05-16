@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 paper-level physical mapping figure
+Primary request: Generate a clean scientific figure showing how a learned signed convolution kernel is mapped into metasurface PSF targets.
+Scene: A learned kernel grid splits into positive and negative branches; each branch becomes a target PSF intensity pattern; then an optimization block adjusts metasurface phase/radius; finally simulated PSF is compared with target PSF on a detector plane.
+Composition: left-to-right pipeline with two parallel positive/negative branches in the middle, small kernel heatmaps, PSF spots, metasurface nanostructure inset, detector-plane comparison. This should look like a paper Figure 1 subpanel, not a decorative concept image.
+Visual style: white background, blue/teal scientific blocks, red/amber for negative branch, crisp arrows, high information density but readable.
+Text policy: short English labels are allowed: Signed kernel, Positive, Negative, Target PSF, Metasurface, Simulated PSF. No long text, no equations, no logos.
+Avoid: no random abstract light art, no dark background, no fake dense unreadable labels.
