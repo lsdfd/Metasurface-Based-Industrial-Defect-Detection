@@ -1,205 +1,309 @@
 ---
 name: research-ppt-builder
-description: Use this skill when creating or revising a research presentation/PPT for this project, especially a thesis or advisor-report deck about metasurface optical frontends, industrial defect detection, Fabric/AITEX, DAGM/SegDecNet, distillation, PSF/metasurface mapping, or paper-assets-to-PPT workflows. It codifies the v4 presentation method: use real data assets for results, use FAL-generated scientific figures for non-data pages, keep one or two main figures per slide, and include a one-sentence conclusion on every slide.
+description: Use this skill when creating or revising a research presentation/PPT in the user's preferred style. The style is figure-driven, thesis/advisor-report oriented, visually clean, and scientifically grounded: use real data figures for experimental results, use AI-generated scientific infographics for conceptual/method/architecture pages, keep each slide centered on one or two strong figures, include a one-sentence takeaway on every slide, and avoid cluttered text-box layouts.
 ---
 
 # Research PPT Builder
 
-This skill captures the successful v4 PPT workflow for this project.
+This skill defines the user's general style for research PPT generation.
 
-## Core Rule
+## North Star
 
-Build research slides around figures, not text boxes.
+Make the deck look like a thesis defense or paper-story presentation, not a text-heavy class report.
 
-- For original experimental data, use real assets from `paper_assets/`.
-- For non-data pages, generate a full scientific figure with FAL `openai/gpt-image-2`.
-- Each slide should have:
-  - title
-  - thin title line
-  - one large main figure, or two side-by-side result figures
-  - one bottom sentence summarizing the slide
-- Avoid pages made from many small PowerPoint text boxes.
-- Avoid decorative hero art. Scientific diagrams must communicate the method.
+The slide should answer:
 
-## Asset Policy
+1. What is this page about?
+2. What is the main figure?
+3. What should the audience remember?
 
-Use real data assets for:
+If a slide has no strong figure, create one before building the slide.
 
-- metrics / result bars
-- threshold sweeps
-- kernel grids
-- mask visualizations
-- PSF target / backphase figures
-- metasurface probe figures
-- compute / MAC charts
-- tables derived from real results
+The user's preferred style is: one clear scientific claim per page, one dominant visual proof, and one memorable bottom-line sentence.
 
-Use AI-generated figures for:
+Do not try to make the deck feel busy. Make it feel authored.
 
-- background / motivation
-- overall method overview
-- optical-electronic system architecture
-- teacher-student distillation mechanism
-- model architecture illustrations
-- training protocol diagrams
-- project summary / future roadmap
+## Slide Layout
 
-Do not use AI images to replace measured or generated result plots.
-
-## FAL Figure Generation
-
-Use the project script:
-
-```bash
-python3 presentation/scripts/generate_ai_images_fal.py \
-  --output-dir presentation/ai_images_vX \
-  --only <prompt_names> \
-  --overwrite
-```
-
-The script reads credentials from:
-
-1. `FAL_KEY`
-2. `FAL_API_KEY`
-3. local `sci-vision-video-agent_latest/config/api_keys.json`
-
-Never hard-code API keys into this repository.
-
-Recommended FAL settings:
-
-- model: `openai/gpt-image-2`
-- image size: `landscape_16_9`
-- quality: `medium`
-- output: `png`
-
-## Prompt Style
-
-Prompts should be detailed and scientifically constrained.
-
-Good prompt requirements:
-
-- Explicitly name the task and exact architecture.
-- Say which modules must appear.
-- Allow only short English labels where useful.
-- Require readable labels and no pseudo text.
-- Require the figure to fill most of the canvas.
-- Prohibit blank placeholder boxes.
-- Prohibit dark sci-fi, purple-heavy, decorative styles.
-
-Useful wording:
-
-```text
-Required short English labels: ...
-Composition: fill 85-90% of the canvas with useful diagram content; no empty placeholder boxes.
-Text policy: short English labels are allowed only if clean and readable; no pseudo text, no unreadable microtext.
-Visual style: Nature/IEEE-style scientific infographic, white background, deep blue/teal modules, restrained red defect marks.
-Avoid: no dark background, no decorative factory scene, no wrong modules.
-```
-
-For model architecture prompts, write the exact project structure.
-
-Fabric example:
-
-```text
-Top branch Electronic Teacher: 256x256 patch -> CNN feature extractor -> FC classifier -> defect probability.
-Bottom branch R1 Optical Student: 64x64 input -> Optical Conv Bank with 16 kernels of 7x7 -> ReLU/Pool -> FC backend hidden=256 -> binary score.
-Do not invent U-Net or segmentation output for Fabric.
-```
-
-DAGM example:
-
-```text
-Teacher: input -> shared conv backbone volume -> segmentation head -> mask; volume -> extractor -> FC classifier -> defect score.
-Student: input 256x256 grayscale -> Optical Conv Bank 64 kernels 15x15 -> FeatureNorm+ReLU -> AvgPool stride 4 -> segmentation head -> concat volume+mask -> extractor -> FC classifier.
-Show Volume KD, Mask KD, Score KD arrows.
-```
-
-## Slide Structure
-
-Use this high-level structure for this project:
-
-1. Cover: text only, no AI hero image.
-2. Background: one AI scientific infographic.
-3. Overall method: one AI method overview.
-4. Optical-electronic architecture: one AI system figure.
-5. Distillation mechanism: one AI figure plus optional formula image.
-6. Kernel-to-PSF mapping: one AI figure plus optional formula image.
-7. Case overview: one AI figure comparing Fabric and DAGM.
-8. Fabric section:
-   - task / scene AI figure
-   - teacher-student architecture AI figure
-   - real metrics and threshold figures
-   - real kernel grids
-   - real compute figure
-   - optional real supporting assets
-9. DAGM section:
-   - task / scene AI figure
-   - teacher-student architecture AI figure
-   - two-stage training AI figure
-   - real metrics
-   - real mask visualization
-   - real threshold sweep
-   - real kernel grids
-   - real PSF/backphase
-   - real metasurface probe
-   - real compute figure/table
-10. Summary and future:
-   - AI closed-loop summary
-   - real case comparison table
-   - AI future roadmap
-
-## Layout Rules
+Default layout:
 
 - 16:9 canvas.
 - White or very light gray background.
-- Deep blue title.
-- Thin line below title.
-- Main image area should dominate the page.
-- Bottom conclusion bar appears on every slide.
-- Use at most two main figures on normal slides.
-- Three images are acceptable only for natural triptychs such as signed/positive/negative kernels.
-- Do not fill slides with paragraphs.
-- If a table is needed, render it as an image and treat it as the main figure.
+- Top title in deep blue.
+- Thin line under title.
+- Middle: one large figure, or two side-by-side figures.
+- Bottom: one sentence summarizing the slide.
+
+Preferred slide density:
+
+- Concept pages: one large AI scientific infographic plus minimal labels.
+- Method pages: one architecture/workflow figure plus one compact formula strip if needed.
+- Result pages: one or two real plots/tables/images, with enough axis labels and legends to stand alone.
+- Comparison pages: one clean table or paired visual comparison.
+
+Avoid:
+
+- Many small text boxes.
+- Long paragraphs.
+- Decorative cards everywhere.
+- Empty hero images with no information.
+- AI-looking atmosphere images that do not explain the science.
+
+Allowed exceptions:
+
+- Three side-by-side images for natural triptychs, such as signed / positive / negative kernels.
+- A single table can be the main figure if the table is a real result summary.
+- A formula strip can sit below the main figure if it is central to the method.
+
+## What To Use AI For
+
+Use AI-generated figures for non-data pages:
+
+- background / motivation
+- problem definition
+- overall method
+- system architecture
+- teacher-student architecture
+- training protocol
+- physical mapping workflow
+- case overview
+- project summary
+- future roadmap
+
+AI figures should be scientific infographics, not posters, cover art, or vague atmosphere images.
+
+Good AI figure traits:
+
+- fills 80-90% of the canvas with useful content
+- has connected modules, arrows, panels, or scientific objects
+- uses a clean white-background paper style
+- uses short English labels where helpful
+- has readable labels, not pseudo text
+- matches the actual method or architecture
+
+Bad AI figure traits:
+
+- big empty areas
+- fake unreadable text
+- wrong model modules
+- wrong task output
+- decorative factory scenes
+- dark sci-fi style
+- purple-heavy gradients
+
+## What Must Stay Real
+
+Do not replace experimental evidence with AI.
+
+Use real project assets for:
+
+- metrics and result bars
+- threshold sweeps
+- confusion matrices
+- mask visualizations
+- qualitative examples
+- kernel grids
+- PSF targets
+- simulated-vs-target PSF probes
+- compute / MAC / parameter charts
+- real tables derived from experiments
+
+If a result is not already presentable, generate a clean plot/table from the real source data. Do not invent it visually with AI.
+
+When real assets are messy, redraw them from data instead of screenshotting notebook clutter.
+
+## AI Prompt Method
+
+Prompts must be specific enough to prevent the image model from inventing the science.
+
+Always specify:
+
+- use case: scientific / educational / thesis / paper figure
+- exact task
+- exact modules that must appear
+- allowed short English labels
+- composition and information density
+- visual style
+- avoid list
+
+Template:
+
+```text
+Use case: scientific-educational
+Asset type: 16:9 thesis slide figure
+Primary request: Draw a scientifically accurate figure for <topic>.
+Scene: <exact objects/modules/flow>.
+Required short English labels: <label1>, <label2>, ...
+Composition: fill 85-90% of the canvas with useful diagram content; no blank placeholder boxes; use arrows/subpanels/modules.
+Visual style: Nature/IEEE-style scientific infographic, white background, deep blue/teal modules, restrained red highlights.
+Avoid: no pseudo text, no unreadable microtext, no wrong modules, no decorative dark sci-fi style, no empty areas.
+```
+
+For architecture diagrams, describe the real architecture step by step. Do not rely on vague requests such as "draw a neural network".
+
+Example structure:
+
+```text
+Top branch: Teacher: input -> backbone -> task heads -> outputs.
+Bottom branch: Student: input -> constrained frontend -> lightweight backend -> outputs.
+Show distillation arrows: logits, mask, features.
+Do not invent modules that are not in the project.
+```
+
+## Figure Text Policy
+
+Use some English labels when they help.
+
+Good:
+
+- short labels such as `Teacher`, `Student`, `Mask KD`, `Feature Volume`, `Target PSF`
+- readable, sparse labels
+- labels placed near real modules
+
+Bad:
+
+- long paragraphs inside images
+- fake unreadable text
+- random labels that do not match the method
+- completely blank diagrams with no explanation
+
+If the generated image has too much fake text or weird empty label boxes, regenerate with a stricter prompt.
+
+## Data Selection
+
+Before building slides, inventory available assets:
+
+- main result figures
+- process figures
+- tables
+- qualitative examples
+- checkpoints or model diagrams if relevant
+- reports / markdown summaries
+
+Choose assets by story value:
+
+1. Use the best/final result as the main figure.
+2. Include process figures only when they explain why the result is trustworthy.
+3. Include failed or weak results only if they teach an important methodological lesson.
+4. Do not clutter the deck with every historical experiment.
+5. Make sure every major claim has a corresponding real figure or table.
+
+For the user's style, result pages are allowed to be more data-heavy than concept pages, but still must have a clean one-sentence takeaway.
+
+Prioritize evidence in this order:
+
+1. Final/best model metrics under the correct evaluation protocol.
+2. Qualitative examples that make the task visually obvious.
+3. Ablations or process curves that explain why the final choice is credible.
+4. Compute/parameter/MAC reductions that explain hardware value.
+5. Failure cases only when they clarify the research path.
+
+## Narrative Structure
+
+A strong research deck usually follows:
+
+1. Cover.
+2. One-page background and pain point.
+3. Overall method figure.
+4. System / architecture figure.
+5. Training or algorithm figure.
+6. Physical mapping or deployment figure, if relevant.
+7. Case study 1:
+   - task and industrial scene
+   - teacher/student or baseline/proposed method
+   - main result
+   - analysis / process evidence
+   - compute or practical significance
+   - short case summary
+8. Case study 2:
+   - same logic, but deeper if it is the main result
+9. Cross-case comparison.
+10. Contributions.
+11. Future work.
+
+Keep background and future concise unless the user explicitly asks for a broad literature lecture. Spend most slides on the two things that matter: what was built and what the evidence shows.
+
+Each case must answer:
+
+- What industrial scene is this?
+- What defect is being detected?
+- What is the input?
+- What is the output?
+- Is it classification, localization, segmentation, or detection?
+- What is the teacher/baseline?
+- What is the student/proposed model?
+- What result proves it works?
+- What practical or hardware significance does it have?
 
 ## Formula Handling
 
-Render formulas as transparent PNG using matplotlib/mathtext, then place them as a small strip under the main figure.
+Use real formula rendering, not ugly typed text.
 
-Good formulas for this project:
+Recommended:
+
+- Render formulas as transparent PNG using matplotlib/mathtext or LaTeX.
+- Place formula as a compact strip under the main method figure.
+- Keep formulas few and central.
+
+Good examples:
 
 ```text
-L = L_task + lambda_cls L_KD^cls + lambda_seg L_KD^seg + lambda_vol L_KD^vol
+L = L_task + lambda_1 L_KD + lambda_2 L_feature
 K+ = max(K,0), K- = max(-K,0), K = K+ - K-
 ```
 
-Do not type raw formula text directly into a slide if it looks ugly.
+Avoid filling slides with derivations unless the user explicitly wants a theory-heavy presentation.
 
-## Quality Check
+## Implementation Workflow
 
-Before finalizing:
+1. Build or update a `presentation/` folder.
+2. Inventory real assets from project result folders.
+3. Decide slide list and map each slide to:
+   - AI figure
+   - real figure
+   - table image
+   - formula image
+4. Generate AI figures with detailed prompts.
+5. Make a contact sheet of AI figures.
+6. Inspect and regenerate weak figures.
+7. Generate PPT with a script, preferably `python-pptx`.
+8. Validate:
+   - slide count
+   - slide titles
+   - all images exist
+   - every slide has a bottom conclusion
+   - file size is GitHub-safe
+9. Version outputs: `v1`, `v2`, `v3`, etc. Never overwrite a good version.
+10. Commit generated PPT, prompts, scripts, and key assets together.
 
-1. Generate a contact sheet for all AI images used.
-2. Inspect for:
-   - unreadable pseudo text
-   - excessive empty space
-   - wrong model modules
-   - wrong task output
-   - dark/decorative style
-3. Read the PPT with `python-pptx` and print slide titles.
-4. Confirm every slide has a bottom conclusion.
-5. Confirm all key `paper_assets` result figures are represented.
-6. Check file size before pushing to GitHub.
+If using AI-generated figures, save the prompts and generated images next to the deck. The deck should be reproducible, not a one-off artifact.
 
-## Current Reference Implementation
+## Quality Checklist
 
-Use these files as the current working reference:
+Before final answer:
+
+- The cover is clean and not an AI hero image unless explicitly requested.
+- Every slide has one sentence at the bottom.
+- Non-data pages use strong AI scientific figures.
+- Data pages use real experiment figures/tables.
+- Architecture figures match the actual project method.
+- Case-study opening pages explain task, scene, input, and output.
+- There are no obvious pseudo-text artifacts in AI figures.
+- There is no strange blank-space-heavy figure.
+- All important assets are represented.
+- The generated deck can be opened/read by tooling.
+- The deck is synced to GitHub if requested.
+
+## Reference In This Repository
+
+The current best example of this style is:
 
 ```text
-presentation/scripts/generate_ai_images_fal.py
-presentation/scripts/build_ppt_v4.py
 presentation/build/metasurface_industrial_defect_detection_v4.pptx
+presentation/scripts/build_ppt_v4.py
+presentation/scripts/generate_ai_images_fal.py
 presentation/ai_images_v4/
 presentation/build/ai_contact_sheet_v4_review.jpg
 ```
 
-When improving the deck, create a new numbered version instead of overwriting a good previous version.
+Use it as a style reference, not as a fixed template. The method should generalize to other research topics.
