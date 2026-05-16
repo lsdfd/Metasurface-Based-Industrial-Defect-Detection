@@ -195,6 +195,116 @@ Visual style: high-quality thesis defense summary figure, white background, deep
 Text policy: short English labels allowed only. No long text, no logos, no equations.
 Avoid: no atmospheric poster, no dark sci-fi, no excessive decorative elements.
 """,
+    "v4_background_infographic": """
+Use case: scientific-educational
+Asset type: 16:9 thesis slide infographic
+Primary request: Create a polished scientific infographic explaining why industrial defect detection needs a metasurface optical frontend.
+Scene: Two balanced halves connected by a central arrow. Left half: Industrial Defect Detection pain points with high-resolution texture/fabric images, tiny sparse defects, CNN/YOLO/Segmentation compute blocks, latency/power icons. Right half: Metasurface Optical Frontend opportunity with illumination, sample, metasurface PSF encoder, CMOS sensor, lightweight electronic backend.
+Required short English labels: Industrial Defect Detection, High-resolution image, Sparse defects, Heavy CNN compute, Metasurface Frontend, Optical convolution, CMOS, Lightweight backend.
+Composition: fill 85-90% of the canvas with useful diagram content; no empty placeholder boxes; use arrows, subpanels, texture thumbnails, compute icons, and optical path modules. Keep labels readable and sparse.
+Visual style: Nature/IEEE-style graphical abstract, white background, deep blue and teal modules, restrained red defect marks, clean scientific layout.
+Avoid: no pseudo text, no unreadable microtext, no blank label boxes, no dark background, no purple-dominant palette, no decorative factory scene.
+""",
+    "v4_methodology_overview": """
+Use case: scientific-educational
+Asset type: 16:9 paper Figure 1 style method overview
+Primary request: Create a complete method overview for metasurface-based industrial defect detection.
+Scene: Three horizontal lanes. Lane 1 Traditional electronic model: industrial image -> CNN/YOLO/SegDecNet frontend -> task head. Lane 2 Distillation: frozen Teacher supervises Optical Student with logits, mask, and feature volume. Lane 3 Physical mapping: learned kernels -> positive/negative split -> target PSF -> metasurface -> CMOS feature maps -> electronic backend -> defect score/mask.
+Required short English labels: Electronic Teacher, Optical Student, Knowledge Distillation, Learned Kernels, Positive/Negative Split, Target PSF, Metasurface, CMOS, Defect Score, Mask.
+Composition: fill the canvas with connected modules, feature maps, kernel grids, PSF spots, and output examples. Labels should be short and accurate; no long paragraphs.
+Visual style: clean publication-ready systems diagram, white background, deep blue teacher blocks, teal optical blocks, red KD arrows.
+Avoid: no vague concept art, no fake equations, no unreadable dense labels, no empty panels.
+""",
+    "v4_hybrid_optical_architecture": """
+Use case: scientific-educational
+Asset type: 16:9 optical-electronic architecture figure
+Primary request: Draw a scientifically plausible hybrid optical-electronic inspection architecture.
+Scene: left-to-right: LED/Laser illumination -> industrial sample with tiny defect -> metasurface PSF/convolution bank -> relay optics -> CMOS sensor with feature map stack -> calibration/normalization -> lightweight electronic backend -> output defect score and segmentation mask.
+Required short English labels: Illumination, Sample, Metasurface PSF bank, Relay optics, CMOS sensor, Feature maps, Calibration, Electronic backend, Score, Mask.
+Composition: fill the figure with the optical path and modules; no blank boxes; show metasurface nanostructure inset and multi-channel feature maps after CMOS. Accurate left-to-right light path.
+Visual style: clean scientific apparatus diagram, white/light gray background, teal light rays, deep blue modules, restrained red defect highlight.
+Avoid: no fake lab photo, no huge empty regions, no unreadable text, no dark sci-fi style.
+""",
+    "v4_distillation_mechanism": """
+Use case: scientific-educational
+Asset type: 16:9 knowledge distillation architecture figure
+Primary request: Draw an accurate teacher-student distillation diagram for this project.
+Scene: Top branch: frozen Electronic Teacher taking industrial images and outputting logits/score, soft mask, and feature volume. Bottom branch: Optical Student with metasurface optical convolution bank, CMOS feature maps, calibration/electronic backend, output score and mask. Arrows from teacher to student represent Score KD, Mask KD, and Volume KD. A small Task Loss connects ground truth labels/masks to student outputs.
+Required short English labels: Frozen Teacher, Optical Student, Score KD, Mask KD, Volume KD, Task Loss, Feature Volume, Soft Mask, Defect Score.
+Composition: two clean horizontal branches with matching outputs and three distillation arrows; fill canvas without clutter. Labels should be readable and accurate.
+Visual style: white background, blue teacher branch, teal student branch, red loss arrows, thesis-quality diagram.
+Avoid: no wrong modules, no pseudo text, no long paragraphs, no empty placeholders.
+""",
+    "v4_kernel_to_psf": """
+Use case: scientific-educational
+Asset type: 16:9 kernel-to-metasurface mapping figure
+Primary request: Draw a scientifically accurate mapping from learned signed convolution kernels to metasurface PSF targets.
+Scene: Signed kernel K splits into K+ positive branch and K- negative branch. Each branch becomes a target PSF. A metasurface phase/radius optimization block produces simulated PSF. Show target-vs-simulated comparison on detector plane.
+Required short English labels: Signed Kernel K, K+ Positive, K- Negative, Target PSF, Phase Optimization, Metasurface, Simulated PSF, Difference.
+Composition: left-to-right pipeline with two parallel positive/negative branches, heatmap kernels, PSF spots, metasurface inset, detector comparison. Fill canvas; no blank label boxes.
+Visual style: crisp paper-style diagram, white background, blue/teal positive branch, red/amber negative branch, clean arrows.
+Avoid: no random light art, no fake dense text, no dark background.
+""",
+    "v4_case_overview": """
+Use case: scientific-educational
+Asset type: 16:9 two-case comparison figure
+Primary request: Draw a two-case overview for this thesis: Fabric binary classification and DAGM segmentation.
+Scene: Left panel Fabric/AITEX: textile/fabric texture image -> patch extraction -> binary OK/NG score. Right panel DAGM Class7: grayscale industrial texture image -> predicted heatmap/mask overlay -> defect score. Center ribbon: teacher to optical student to metasurface PSF.
+Required short English labels: Fabric Binary Classification, Patch, OK/NG, DAGM Segmentation, Heatmap, Mask, Optical Student, Metasurface PSF.
+Composition: two balanced case panels, useful content fills the page, no empty regions. Make it obvious Fabric is classification and DAGM is localization/segmentation.
+Visual style: clean thesis infographic, white background, teal/blue modules, red defect highlights.
+Avoid: no misleading object detection boxes for Fabric, no dark background, no unreadable labels.
+""",
+    "v4_fabric_architecture": """
+Use case: scientific-educational
+Asset type: 16:9 Fabric teacher-student model architecture figure
+Primary request: Draw the exact Fabric/AITEX binary classification teacher-student architecture used in this project.
+Scene: Input fabric patch. Top branch Electronic Teacher: 256x256 patch -> CNN feature extractor -> FC classifier -> defect probability. Bottom branch R1 Optical Student: resize/input 64x64 -> Optical Conv Bank with 16 kernels of 7x7 -> ReLU/Pool -> FC backend hidden=256 -> binary score. Show kernel export -> positive/negative split. Show threshold calibration near output.
+Required short English labels: Fabric Patch, Electronic Teacher, CNN, FC, Defect Probability, R1 Optical Student, 64x64, 16 kernels 7x7, ReLU/Pool, FC 256, Threshold, Kernel Export.
+Composition: two horizontal branches, top teacher and bottom student, arrows clear, fill page. Do not invent U-Net or segmentation mask for Fabric.
+Visual style: accurate model architecture diagram, white background, blue teacher, teal student, red output/threshold.
+Avoid: no wrong segmentation output, no unreadable tiny labels, no empty boxes.
+""",
+    "v4_dagm_architecture": """
+Use case: scientific-educational
+Asset type: 16:9 DAGM SegDecNet teacher-student model architecture figure
+Primary request: Draw the exact DAGM Class7 teacher-student architecture used in this project.
+Scene: Top branch SegDecNet Teacher: input image -> shared conv backbone volume -> segmentation head -> mask; volume also goes to feature extractor -> FC classifier -> defect score. Bottom branch Optical Student: input 256x256 grayscale -> Optical Conv Bank 64 kernels 15x15 -> FeatureNorm + ReLU -> AvgPool stride 4 -> segmentation head -> concat volume + seg mask -> extractor -> FC classifier. Show Volume KD, Mask KD, and Score KD arrows between teacher and student.
+Required short English labels: SegDecNet Teacher, Shared Conv Volume, Seg Head, Mask, Extractor, FC, Defect Score, Optical Student, 64 kernels 15x15, FeatureNorm+ReLU, AvgPool s=4, Concat, Volume KD, Mask KD, Score KD.
+Composition: two aligned branches with accurate modules; fill canvas; make teacher/student relationship clear.
+Visual style: publication-quality architecture diagram, white background, blue teacher branch, teal optical frontend, red KD arrows.
+Avoid: no YOLO boxes, no wrong Fabric modules, no pseudo text, no blank placeholders.
+""",
+    "v4_two_stage_training": """
+Use case: scientific-educational
+Asset type: 16:9 two-stage training protocol figure
+Primary request: Draw the two-stage training protocol for DAGM optical student.
+Scene: A left-to-right timeline with Stage 1 and Stage 2. Stage 1: Optical frontend warm-up using Volume KD and Seg KD. Stage 2: Joint optimization using Task Loss, Score KD, Seg KD, and Volume KD. Teacher is frozen above the timeline; student is trained below. Show mask, volume, and score icons.
+Required short English labels: Stage 1, Frontend Warm-up, Volume KD, Seg KD, Stage 2, Joint Optimization, Task Loss, Score KD, Frozen Teacher, Trainable Student.
+Composition: fill canvas with two stage panels and arrows; labels readable; no empty panels.
+Visual style: academic workflow figure, white background, teal/blue stages, red loss arrows.
+Avoid: no fake equations, no long text, no unreadable micro labels.
+""",
+    "v4_project_summary": """
+Use case: scientific-educational
+Asset type: 16:9 project closed-loop summary figure
+Primary request: Draw a clean closed-loop summary of this metasurface industrial defect detection project.
+Scene: Electronic Teacher -> Optical Student -> Learned Kernels -> Positive/Negative Split -> Target PSF -> Metasurface Probe -> Lightweight Backend -> Defect Outputs. Include two small case icons: Fabric Binary and DAGM Segmentation. Include compute reduction and feasibility probe as visual callouts.
+Required short English labels: Teacher, Optical Student, Kernels, PSF Target, Metasurface Probe, Backend, Fabric Binary, DAGM Segmentation, Compute Reduction.
+Composition: polished loop or left-to-right closed chain; fill the canvas; minimal but useful labels.
+Visual style: thesis defense closing figure, white background, deep blue/teal palette, red defect highlights.
+Avoid: no decorative poster, no dark sci-fi, no empty areas.
+""",
+    "v4_future_roadmap": """
+Use case: scientific-educational
+Asset type: 16:9 future work roadmap figure
+Primary request: Draw a future roadmap for metasurface optical frontend industrial inspection.
+Scene: Central metasurface-camera module connects to four applications: Fabric inspection, DAGM texture segmentation, PCB/chip defect localization, wafer inspection. Show future technical steps: simulated PSF feedback, hardware-aware retraining, calibration, real optical experiment.
+Required short English labels: Fabric, DAGM, PCB/Chip, Wafer, Simulated PSF, Calibration, Hardware-aware Training, Optical Experiment.
+Composition: central hub with four branches and four technical milestones; fill canvas, no blank boxes.
+Visual style: clean scientific roadmap, white background, blue/teal modules, red defect annotations.
+Avoid: no futuristic city, no fake brand logos, no dark background.
+""",
 }
 
 

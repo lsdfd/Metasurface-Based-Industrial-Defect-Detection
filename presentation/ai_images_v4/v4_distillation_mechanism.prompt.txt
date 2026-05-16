@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 knowledge distillation architecture figure
+Primary request: Draw an accurate teacher-student distillation diagram for this project.
+Scene: Top branch: frozen Electronic Teacher taking industrial images and outputting logits/score, soft mask, and feature volume. Bottom branch: Optical Student with metasurface optical convolution bank, CMOS feature maps, calibration/electronic backend, output score and mask. Arrows from teacher to student represent Score KD, Mask KD, and Volume KD. A small Task Loss connects ground truth labels/masks to student outputs.
+Required short English labels: Frozen Teacher, Optical Student, Score KD, Mask KD, Volume KD, Task Loss, Feature Volume, Soft Mask, Defect Score.
+Composition: two clean horizontal branches with matching outputs and three distillation arrows; fill canvas without clutter. Labels should be readable and accurate.
+Visual style: white background, blue teacher branch, teal student branch, red loss arrows, thesis-quality diagram.
+Avoid: no wrong modules, no pseudo text, no long paragraphs, no empty placeholders.

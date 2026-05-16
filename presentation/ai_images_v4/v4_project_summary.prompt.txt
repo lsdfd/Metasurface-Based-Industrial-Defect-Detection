@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 project closed-loop summary figure
+Primary request: Draw a clean closed-loop summary of this metasurface industrial defect detection project.
+Scene: Electronic Teacher -> Optical Student -> Learned Kernels -> Positive/Negative Split -> Target PSF -> Metasurface Probe -> Lightweight Backend -> Defect Outputs. Include two small case icons: Fabric Binary and DAGM Segmentation. Include compute reduction and feasibility probe as visual callouts.
+Required short English labels: Teacher, Optical Student, Kernels, PSF Target, Metasurface Probe, Backend, Fabric Binary, DAGM Segmentation, Compute Reduction.
+Composition: polished loop or left-to-right closed chain; fill the canvas; minimal but useful labels.
+Visual style: thesis defense closing figure, white background, deep blue/teal palette, red defect highlights.
+Avoid: no decorative poster, no dark sci-fi, no empty areas.

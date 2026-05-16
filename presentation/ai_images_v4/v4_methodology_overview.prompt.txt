@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 paper Figure 1 style method overview
+Primary request: Create a complete method overview for metasurface-based industrial defect detection.
+Scene: Three horizontal lanes. Lane 1 Traditional electronic model: industrial image -> CNN/YOLO/SegDecNet frontend -> task head. Lane 2 Distillation: frozen Teacher supervises Optical Student with logits, mask, and feature volume. Lane 3 Physical mapping: learned kernels -> positive/negative split -> target PSF -> metasurface -> CMOS feature maps -> electronic backend -> defect score/mask.
+Required short English labels: Electronic Teacher, Optical Student, Knowledge Distillation, Learned Kernels, Positive/Negative Split, Target PSF, Metasurface, CMOS, Defect Score, Mask.
+Composition: fill the canvas with connected modules, feature maps, kernel grids, PSF spots, and output examples. Labels should be short and accurate; no long paragraphs.
+Visual style: clean publication-ready systems diagram, white background, deep blue teacher blocks, teal optical blocks, red KD arrows.
+Avoid: no vague concept art, no fake equations, no unreadable dense labels, no empty panels.

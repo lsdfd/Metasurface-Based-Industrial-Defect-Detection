@@ -5,18 +5,19 @@
 当前推荐 PPT：
 
 ```text
-presentation/build/metasurface_industrial_defect_detection_v3.pptx
+presentation/build/metasurface_industrial_defect_detection_v4.pptx
 ```
 
 页数：`30`
 
-文件大小：约 `14.6 MB`
+文件大小：约 `12.8 MB`
 
 历史版本仍保留：
 
 ```text
 presentation/build/metasurface_industrial_defect_detection_v1.pptx
 presentation/build/metasurface_industrial_defect_detection_v2.pptx
+presentation/build/metasurface_industrial_defect_detection_v3.pptx
 ```
 
 ## 1. 主题
@@ -77,6 +78,7 @@ AI 概念图保存在：
 
 ```text
 presentation/ai_images_v3/
+presentation/ai_images_v4/
 presentation/ai_images_v2/
 ```
 
@@ -119,6 +121,22 @@ v3_two_stage_dagm_training.png
 v3_project_summary_closed_loop.png
 ```
 
+当前 v4 使用的 FAL 图：
+
+```text
+v4_background_infographic.png
+v4_methodology_overview.png
+v4_hybrid_optical_architecture.png
+v4_distillation_mechanism.png
+v4_kernel_to_psf.png
+v4_case_overview.png
+v4_fabric_architecture.png
+v4_dagm_architecture.png
+v4_two_stage_training.png
+v4_project_summary.png
+v4_future_roadmap.png
+```
+
 说明：
 
 - 脚本先读取环境变量 `FAL_KEY` / `FAL_API_KEY`
@@ -128,7 +146,13 @@ v3_project_summary_closed_loop.png
 
 ## 5. PPT 生成脚本
 
-PPT v3 由固定版式脚本生成：
+PPT v4 由固定版式脚本生成：
+
+```bash
+MPLCONFIGDIR=/private/tmp/mpl python3 presentation/scripts/build_ppt_v4.py
+```
+
+PPT v3 脚本：
 
 ```bash
 MPLCONFIGDIR=/private/tmp/mpl python3 presentation/scripts/build_ppt_v3.py
@@ -151,6 +175,7 @@ python3 presentation/scripts/build_ppt.py
 ```text
 presentation/build/metasurface_industrial_defect_detection_v2.pptx
 presentation/build/metasurface_industrial_defect_detection_v3.pptx
+presentation/build/metasurface_industrial_defect_detection_v4.pptx
 ```
 
 版式原则：
@@ -182,15 +207,22 @@ presentation/build/metasurface_industrial_defect_detection_v3.pptx
 - 新增 v3 FAL 图覆盖蒸馏机制、kernel-to-PSF、案例总览、Fabric 架构、DAGM 架构、两阶段训练和项目闭环。
 - Fabric 和 DAGM 的真实 assets 全部尽量纳入 PPT，包括结果、threshold、kernel、PSF、probe、compute 和关键表格。
 
-## 8. 当前版本注意事项
+## 8. v4 相比 v3 的主要修改
+
+- 重新生成了 11 张 FAL 图，允许少量准确英文短标签，避免完全无字导致画面奇怪。
+- Prompt 中显式约束 Fabric 是 patch binary classification，DAGM 是 score + pixel mask segmentation。
+- Prompt 中显式写入 Fabric R1 student 和 DAGM optical student 的关键模块，减少 AI 架构图乱画。
+- 保持页面主体为 1 张大图或 2 张并排真实结果图，每页底部仍有一句总结。
+
+## 9. 当前版本注意事项
 
 - 这是一版可汇报的初稿，不是最终美化版。
 - Fabric 主线使用 `R1 student best threshold F1=0.8571`。
 - DAGM 主线使用 full validation `IoU=0.9145, Dice=0.9349`。
 - Teacher 大权重没有推送到 GitHub，避免超过 GitHub 单文件限制。
-- 后续如果要微调 PPT，优先改 `presentation/scripts/build_ppt_v3.py`，再重新生成。
+- 后续如果要微调 PPT，优先改 `presentation/scripts/build_ppt_v4.py`，再重新生成。
 
-## 9. 下一步建议
+## 10. 下一步建议
 
 1. 人工快速翻一遍 PPT，检查中文标题和导师关注点。
 2. 根据实际汇报时间删减或合并 2-3 页。

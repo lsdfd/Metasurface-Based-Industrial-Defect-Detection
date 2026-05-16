@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 two-case comparison figure
+Primary request: Draw a two-case overview for this thesis: Fabric binary classification and DAGM segmentation.
+Scene: Left panel Fabric/AITEX: textile/fabric texture image -> patch extraction -> binary OK/NG score. Right panel DAGM Class7: grayscale industrial texture image -> predicted heatmap/mask overlay -> defect score. Center ribbon: teacher to optical student to metasurface PSF.
+Required short English labels: Fabric Binary Classification, Patch, OK/NG, DAGM Segmentation, Heatmap, Mask, Optical Student, Metasurface PSF.
+Composition: two balanced case panels, useful content fills the page, no empty regions. Make it obvious Fabric is classification and DAGM is localization/segmentation.
+Visual style: clean thesis infographic, white background, teal/blue modules, red defect highlights.
+Avoid: no misleading object detection boxes for Fabric, no dark background, no unreadable labels.

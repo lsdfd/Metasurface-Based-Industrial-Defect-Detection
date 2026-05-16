@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 two-stage training protocol figure
+Primary request: Draw the two-stage training protocol for DAGM optical student.
+Scene: A left-to-right timeline with Stage 1 and Stage 2. Stage 1: Optical frontend warm-up using Volume KD and Seg KD. Stage 2: Joint optimization using Task Loss, Score KD, Seg KD, and Volume KD. Teacher is frozen above the timeline; student is trained below. Show mask, volume, and score icons.
+Required short English labels: Stage 1, Frontend Warm-up, Volume KD, Seg KD, Stage 2, Joint Optimization, Task Loss, Score KD, Frozen Teacher, Trainable Student.
+Composition: fill canvas with two stage panels and arrows; labels readable; no empty panels.
+Visual style: academic workflow figure, white background, teal/blue stages, red loss arrows.
+Avoid: no fake equations, no long text, no unreadable micro labels.

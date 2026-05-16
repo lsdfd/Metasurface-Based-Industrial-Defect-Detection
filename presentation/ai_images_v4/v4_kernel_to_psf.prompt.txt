@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 kernel-to-metasurface mapping figure
+Primary request: Draw a scientifically accurate mapping from learned signed convolution kernels to metasurface PSF targets.
+Scene: Signed kernel K splits into K+ positive branch and K- negative branch. Each branch becomes a target PSF. A metasurface phase/radius optimization block produces simulated PSF. Show target-vs-simulated comparison on detector plane.
+Required short English labels: Signed Kernel K, K+ Positive, K- Negative, Target PSF, Phase Optimization, Metasurface, Simulated PSF, Difference.
+Composition: left-to-right pipeline with two parallel positive/negative branches, heatmap kernels, PSF spots, metasurface inset, detector comparison. Fill canvas; no blank label boxes.
+Visual style: crisp paper-style diagram, white background, blue/teal positive branch, red/amber negative branch, clean arrows.
+Avoid: no random light art, no fake dense text, no dark background.

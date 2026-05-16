@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 optical-electronic architecture figure
+Primary request: Draw a scientifically plausible hybrid optical-electronic inspection architecture.
+Scene: left-to-right: LED/Laser illumination -> industrial sample with tiny defect -> metasurface PSF/convolution bank -> relay optics -> CMOS sensor with feature map stack -> calibration/normalization -> lightweight electronic backend -> output defect score and segmentation mask.
+Required short English labels: Illumination, Sample, Metasurface PSF bank, Relay optics, CMOS sensor, Feature maps, Calibration, Electronic backend, Score, Mask.
+Composition: fill the figure with the optical path and modules; no blank boxes; show metasurface nanostructure inset and multi-channel feature maps after CMOS. Accurate left-to-right light path.
+Visual style: clean scientific apparatus diagram, white/light gray background, teal light rays, deep blue modules, restrained red defect highlight.
+Avoid: no fake lab photo, no huge empty regions, no unreadable text, no dark sci-fi style.

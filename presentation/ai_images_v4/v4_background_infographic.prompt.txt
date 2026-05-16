@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 thesis slide infographic
+Primary request: Create a polished scientific infographic explaining why industrial defect detection needs a metasurface optical frontend.
+Scene: Two balanced halves connected by a central arrow. Left half: Industrial Defect Detection pain points with high-resolution texture/fabric images, tiny sparse defects, CNN/YOLO/Segmentation compute blocks, latency/power icons. Right half: Metasurface Optical Frontend opportunity with illumination, sample, metasurface PSF encoder, CMOS sensor, lightweight electronic backend.
+Required short English labels: Industrial Defect Detection, High-resolution image, Sparse defects, Heavy CNN compute, Metasurface Frontend, Optical convolution, CMOS, Lightweight backend.
+Composition: fill 85-90% of the canvas with useful diagram content; no empty placeholder boxes; use arrows, subpanels, texture thumbnails, compute icons, and optical path modules. Keep labels readable and sparse.
+Visual style: Nature/IEEE-style graphical abstract, white background, deep blue and teal modules, restrained red defect marks, clean scientific layout.
+Avoid: no pseudo text, no unreadable microtext, no blank label boxes, no dark background, no purple-dominant palette, no decorative factory scene.

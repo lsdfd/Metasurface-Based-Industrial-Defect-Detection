@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 future work roadmap figure
+Primary request: Draw a future roadmap for metasurface optical frontend industrial inspection.
+Scene: Central metasurface-camera module connects to four applications: Fabric inspection, DAGM texture segmentation, PCB/chip defect localization, wafer inspection. Show future technical steps: simulated PSF feedback, hardware-aware retraining, calibration, real optical experiment.
+Required short English labels: Fabric, DAGM, PCB/Chip, Wafer, Simulated PSF, Calibration, Hardware-aware Training, Optical Experiment.
+Composition: central hub with four branches and four technical milestones; fill canvas, no blank boxes.
+Visual style: clean scientific roadmap, white background, blue/teal modules, red defect annotations.
+Avoid: no futuristic city, no fake brand logos, no dark background.

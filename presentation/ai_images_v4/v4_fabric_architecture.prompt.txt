@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 Fabric teacher-student model architecture figure
+Primary request: Draw the exact Fabric/AITEX binary classification teacher-student architecture used in this project.
+Scene: Input fabric patch. Top branch Electronic Teacher: 256x256 patch -> CNN feature extractor -> FC classifier -> defect probability. Bottom branch R1 Optical Student: resize/input 64x64 -> Optical Conv Bank with 16 kernels of 7x7 -> ReLU/Pool -> FC backend hidden=256 -> binary score. Show kernel export -> positive/negative split. Show threshold calibration near output.
+Required short English labels: Fabric Patch, Electronic Teacher, CNN, FC, Defect Probability, R1 Optical Student, 64x64, 16 kernels 7x7, ReLU/Pool, FC 256, Threshold, Kernel Export.
+Composition: two horizontal branches, top teacher and bottom student, arrows clear, fill page. Do not invent U-Net or segmentation mask for Fabric.
+Visual style: accurate model architecture diagram, white background, blue teacher, teal student, red output/threshold.
+Avoid: no wrong segmentation output, no unreadable tiny labels, no empty boxes.

@@ -1,0 +1,8 @@
+Use case: scientific-educational
+Asset type: 16:9 DAGM SegDecNet teacher-student model architecture figure
+Primary request: Draw the exact DAGM Class7 teacher-student architecture used in this project.
+Scene: Top branch SegDecNet Teacher: input image -> shared conv backbone volume -> segmentation head -> mask; volume also goes to feature extractor -> FC classifier -> defect score. Bottom branch Optical Student: input 256x256 grayscale -> Optical Conv Bank 64 kernels 15x15 -> FeatureNorm + ReLU -> AvgPool stride 4 -> segmentation head -> concat volume + seg mask -> extractor -> FC classifier. Show Volume KD, Mask KD, and Score KD arrows between teacher and student.
+Required short English labels: SegDecNet Teacher, Shared Conv Volume, Seg Head, Mask, Extractor, FC, Defect Score, Optical Student, 64 kernels 15x15, FeatureNorm+ReLU, AvgPool s=4, Concat, Volume KD, Mask KD, Score KD.
+Composition: two aligned branches with accurate modules; fill canvas; make teacher/student relationship clear.
+Visual style: publication-quality architecture diagram, white background, blue teacher branch, teal optical frontend, red KD arrows.
+Avoid: no YOLO boxes, no wrong Fabric modules, no pseudo text, no blank placeholders.
