@@ -2,15 +2,21 @@
 
 更新时间：2026-05-16
 
-当前第一版 PPT：
+当前 PPT：
+
+```text
+presentation/build/metasurface_industrial_defect_detection_v2.pptx
+```
+
+页数：`29`
+
+文件大小：约 `8.4 MB`
+
+历史初稿仍保留：
 
 ```text
 presentation/build/metasurface_industrial_defect_detection_v1.pptx
 ```
-
-页数：`31`
-
-文件大小：约 `9.6 MB`
 
 ## 1. 主题
 
@@ -37,7 +43,7 @@ presentation/build/metasurface_industrial_defect_detection_v1.pptx
 2-7    背景与总体方案
 8-14   Fabric 二分类案例
 15-27  DAGM / SegDecNet 案例
-28-31  总结与未来展望
+28-29  总结与未来展望
 ```
 
 ## 3. 真实实验素材来源
@@ -95,7 +101,13 @@ python3 presentation/scripts/generate_ai_images_fal.py
 
 ## 5. PPT 生成脚本
 
-PPT 由固定版式脚本生成：
+PPT v2 由固定版式脚本生成：
+
+```bash
+MPLCONFIGDIR=/private/tmp/mpl python3 presentation/scripts/build_ppt_v2.py
+```
+
+历史 v1 脚本：
 
 ```bash
 python3 presentation/scripts/build_ppt.py
@@ -104,7 +116,7 @@ python3 presentation/scripts/build_ppt.py
 输出：
 
 ```text
-presentation/build/metasurface_industrial_defect_detection_v1.pptx
+presentation/build/metasurface_industrial_defect_detection_v2.pptx
 ```
 
 版式原则：
@@ -116,15 +128,26 @@ presentation/build/metasurface_industrial_defect_detection_v1.pptx
 - 中间 1 张主图 / 1 组规整图 / 1 张表
 - 底部 1 行核心结论
 
-## 6. 当前版本注意事项
+## 6. v2 相比 v1 的主要修改
+
+- 第一页改为标准文字封面，不再使用 AI 大图。
+- 背景压缩为 1 页，但补充工业检测痛点、传统电子模型、超表面机会和本课题切入点。
+- 方法论页增加传统工业视觉管线、光电融合架构、蒸馏机制和 kernel-to-PSF 公式。
+- 公式统一用 matplotlib mathtext 渲染为透明 PNG，保存在 `presentation/generated_figures/formulas/`。
+- Fabric 开头明确说明是织物 patch 二分类，不输出具体缺陷位置。
+- DAGM 开头明确说明是工业纹理缺陷分类 + 像素级 mask 分割。
+- Teacher / student 架构页重新绘制，明确光学前端和电子后端边界。
+- 数据页保留 v1 中较好的真实结果图，但补充解释文字和表格。
+
+## 7. 当前版本注意事项
 
 - 这是一版可汇报的初稿，不是最终美化版。
 - Fabric 主线使用 `R1 student best threshold F1=0.8571`。
 - DAGM 主线使用 full validation `IoU=0.9145, Dice=0.9349`。
 - Teacher 大权重没有推送到 GitHub，避免超过 GitHub 单文件限制。
-- 后续如果要微调 PPT，优先改 `presentation/scripts/build_ppt.py`，再重新生成。
+- 后续如果要微调 PPT，优先改 `presentation/scripts/build_ppt_v2.py`，再重新生成。
 
-## 7. 下一步建议
+## 8. 下一步建议
 
 1. 人工快速翻一遍 PPT，检查中文标题和导师关注点。
 2. 根据实际汇报时间删减或合并 2-3 页。
