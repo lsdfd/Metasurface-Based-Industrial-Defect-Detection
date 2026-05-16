@@ -121,7 +121,7 @@ kernel_grid_negative.png
 psf_backphase_preview.png
 ```
 
-其中 `dagm_psf_targets.npz` 是后续接 `卷积核->超表面相位设计代码/` 的主要入口。
+其中 `dagm_psf_targets.npz` 是后续接 `kernel-to-metasurface-phase-design/` 的主要入口。
 
 6. 首轮 metasurface 可实现性 probe。
 

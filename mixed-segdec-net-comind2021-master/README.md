@@ -268,7 +268,7 @@ GitHub 忽略：
 3. 把 fixed threshold 与 best threshold 指标写入 `FOCUSED_SWEEP_NOTES.md`。
 4. 和 teacher 在同一 full split 上做对比。
 5. 导出 kernels，做 positive/negative split。
-6. 接 `卷积核->超表面相位设计代码/`，开始 PSF/phase optimization。
+6. 接 `kernel-to-metasurface-phase-design/`，开始 PSF/phase optimization。
 
 ## 原始项目来源
 

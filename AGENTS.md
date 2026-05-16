@@ -22,13 +22,13 @@
   - AITEX fabric 数据已经在目录中。
   - 包含二分类 patch classifier 和 U-Net 分割 notebook。
   - `deploy/` 下有 Streamlit 推理 UI。
-- `参考工作/`
+- `reference-papers/`
   - 光学卷积、知识蒸馏、NTKD、RGB/多色超表面光学编码器和补充材料的核心文献。
   - 实现蒸馏或超表面映射前，要认真读这些材料。
-- `卷积核->超表面相位设计代码/`
+- `kernel-to-metasurface-phase-design/`
   - PSF-engineered meta-optics 设计的 TensorFlow notebook。
   - 后续把 learned kernels 映射到超表面结构时，优先参考这个实现。
-- `课题背景/`
+- `project-background/`
   - 项目构想和 demo 方案文档。
 
 ## 当前基线：Fabric Defect Detection
@@ -90,8 +90,8 @@
    - 使用 student 这一层 CNN 的 learned kernels。
    - 第一版尽量沿用参考文献和补充材料里的相位恢复/PSF 工程方法。
    - 使用蒸馏得到的 CNN kernels 作为目标 PSF/kernels。
-   - 适配 `卷积核->超表面相位设计代码/TF_for_PSF_Engineering_CIFAR.ipynb` 到 fabric student kernels。
-   - 这里非常依赖 `参考工作/补充材料.pdf`，包括 positive/negative split、PSF enlargement、angular spectrum propagation、scatterer width-phase proxy、calibration 等细节。
+   - 适配 `kernel-to-metasurface-phase-design/TF_for_PSF_Engineering_CIFAR.ipynb` 到 fabric student kernels。
+   - 这里非常依赖 `reference-papers/补充材料.pdf`，包括 positive/negative split、PSF enlargement、angular spectrum propagation、scatterer width-phase proxy、calibration 等细节。
    - 参考文献中能复用的地方尽量复用，但必须结合 fabric 场景调整，不要机械照搬。
 
 ## 参考工作要点

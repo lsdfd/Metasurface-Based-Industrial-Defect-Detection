@@ -141,7 +141,7 @@ python scripts/export/export_student_kernels.py \
 - `positive`：正权重部分；
 - `negative`：负权重取反后的正值部分。
 
-这一步是后续适配 `卷积核->超表面相位设计代码/TF_for_PSF_Engineering_CIFAR.ipynb` 的入口。
+这一步是后续适配 `kernel-to-metasurface-phase-design/TF_for_PSF_Engineering_CIFAR.ipynb` 的入口。
 
 ## 第一版 Student 设计依据
 

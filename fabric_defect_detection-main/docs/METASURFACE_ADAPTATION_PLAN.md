@@ -2,7 +2,7 @@
 
 This document aligns the current fabric student with the existing
 `TF_for_PSF_Engineering_CIFAR.ipynb` workflow under
-`卷积核->超表面相位设计代码/`.
+`kernel-to-metasurface-phase-design/`.
 
 ## Current Starting Point
 
@@ -66,7 +66,7 @@ Goal:
 
 Expected new artifact:
 
-- `卷积核->超表面相位设计代码/TF_for_PSF_Engineering_Fabric_R1.ipynb`
+- `kernel-to-metasurface-phase-design/TF_for_PSF_Engineering_Fabric_R1.ipynb`
 
 ### Version C: Fabric Optical Design Refinement
 

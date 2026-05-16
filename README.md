@@ -45,18 +45,18 @@ SegDecNet teacher
 ├── SERVER.md
 ├── mixed-segdec-net-comind2021-master/
 ├── fabric_defect_detection-main/
-├── 卷积核->超表面相位设计代码/
-├── 参考工作/
-└── 课题背景/
+├── kernel-to-metasurface-phase-design/
+├── reference-papers/
+└── project-background/
 ```
 
 各目录含义：
 
 - `mixed-segdec-net-comind2021-master/`：当前主线。基于 SegDecNet，新增 DAGM Class7 optical student 蒸馏。
 - `fabric_defect_detection-main/`：早期 fabric demo 和低分辨率经验来源。当前不是主线，但保留代码和笔记。
-- `卷积核->超表面相位设计代码/`：后续把 learned kernels 转成 PSF/phase 的参考 notebook。
-- `参考工作/`：光学前端、RGB metasurface、知识蒸馏、NTKD 等论文资料。
-- `课题背景/`：课题构想、demo 方案和背景材料。
+- `kernel-to-metasurface-phase-design/`：后续把 learned kernels 转成 PSF/phase 的参考 notebook。
+- `reference-papers/`：光学前端、RGB metasurface、知识蒸馏、NTKD 等论文资料。
+- `project-background/`：课题构想、demo 方案和背景材料。
 
 ## 当前主线在哪里
 
