@@ -1,0 +1,9 @@
+Use case: scientific-educational
+Asset type: 16:9 thesis slide figure, same visual style as the existing v4 deck.
+Primary request: Draw the angular spectrum optimization loop used to connect phase distribution and target PSF.
+Real data context to incorporate visually: representative DAGM metasurface feasibility probes used 40 Adam iterations, learning rate 0.005, ROI size 96, CUDA simulation, and achieved cosine similarity about 0.979-0.991 for selected positive/negative branches. Wavelength is 532 nm, detector distance is 2.4 mm, simulation canvas is 1600 x 1600.
+Scene: closed loop: phase phi(x,y) -> FFT / angular spectrum transfer function H(fx,fy,z) -> propagated complex field Uz -> intensity |Uz|^2 simulated PSF -> compare with target PSF -> loss -> Adam update back to phase. Include target-vs-simulated PSF thumbnails and a tiny decreasing loss curve motif.
+Required short English labels: Phase, FFT, Transfer Function, Simulated PSF, Target PSF, Loss, Adam Update, Cosine 0.979-0.991.
+Composition: circular or rectangular loop diagram filling the page; formulas should be implied visually, not rendered as long text; labels short and readable.
+Visual style: Nature/IEEE-style scientific workflow, white background, blue/teal arrows, red loss/comparison highlight, consistent with v4 PPT.
+Avoid: no fake dense equations, no unreadable labels, no dark sci-fi style, no decorative-only light beams.

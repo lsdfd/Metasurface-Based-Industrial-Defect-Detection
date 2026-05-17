@@ -1,0 +1,9 @@
+Use case: scientific-educational
+Asset type: 16:9 thesis slide figure, same visual style as the existing v4 deck.
+Primary request: Draw a scientifically accurate PSF-to-phase inverse design figure for a metasurface optical frontend.
+Real data context to incorporate visually: DAGM optical student kernels were exported as PSF targets; the current package uses wavelength 532 nm, grid pitch 586 nm, detector distance 2.4 mm, PSF scale factor 2, and simulation canvas 1600 x 1600. Existing results include target PSF center crops and a back-propagated phase preview.
+Scene: left-to-right pipeline: Target PSF intensity from learned optical kernel -> angular-spectrum/back-propagation block -> optimized phase mask phi(x,y) -> simulated PSF on detector plane. Include small heatmap-like target PSF thumbnail, wrapped phase map thumbnail, and detector-plane PSF thumbnail.
+Required short English labels: Target PSF, Back Propagation, Phase Mask, Simulated PSF, Loss.
+Composition: one clean paper-style pipeline filling 85-90% of the canvas; no empty placeholder boxes; use arrows and three heatmap panels; make it look like an inserted method figure in a thesis, not a poster.
+Visual style: white background, deep blue/teal modules, restrained red loss arrow, crisp scientific diagram consistent with v4 PPT.
+Avoid: no pseudo text, no unreadable microtext, no wrong modules, no decorative sci-fi optics, no dark background.

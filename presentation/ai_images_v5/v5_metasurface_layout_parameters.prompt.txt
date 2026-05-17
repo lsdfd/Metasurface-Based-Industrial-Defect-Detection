@@ -1,0 +1,9 @@
+Use case: scientific-educational
+Asset type: 16:9 thesis slide figure, same visual style as the existing v4 deck.
+Primary request: Draw the final metasurface layout and physical parameter summary for the proposed optical frontend.
+Real data context to incorporate visually: current simulation settings are wavelength 532 nm, grid pitch 586 nm, detector distance 2.4 mm, PSF scale factor 2, simulation canvas 1600 x 1600, positive/negative branches from learned kernels, and SiN nanopillars on quartz/SiO2 substrate as the reference material route.
+Scene: a large metasurface array layout with varied nanopillar widths/radii according to a discrete geometry map; show one magnified unit cell, periodic pitch annotation, incident 532 nm light, detector plane at 2.4 mm, and output PSF on CMOS/detector. Include a compact parameter callout panel with short readable labels.
+Required short English labels: 532 nm, Pitch 586 nm, z = 2.4 mm, SiN, Quartz / SiO2, Geometry Map, Detector PSF, Positive / Negative Branch.
+Composition: one clean engineering layout figure; left/middle metasurface array and unit cell, right detector PSF, small parameter callout. Fill page without clutter.
+Visual style: scientific device schematic, white background, teal/blue metasurface, red PSF highlight, consistent with v4 PPT.
+Avoid: no wafer glamour shot, no fake brand logos, no dense pseudo text, no dark sci-fi style, no unsupported fabrication claims.

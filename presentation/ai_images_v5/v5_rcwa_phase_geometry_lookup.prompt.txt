@@ -1,0 +1,9 @@
+Use case: scientific-educational
+Asset type: 16:9 thesis slide figure, same visual style as the existing v4 deck.
+Primary request: Draw a phase-to-geometry mapping workflow using RCWA simulation and a phase-geometry lookup table.
+Real data context to incorporate visually: the project currently uses a reference-inspired single-wavelength route at 532 nm and grid pitch 586 nm; target phase comes from PSF inverse design. This slide should be presented as the structure-parameter mapping step, not as fabricated measured data.
+Scene: left: target phase map phi(x,y). Middle: nanopillar unit cell on quartz/SiO2 substrate with SiN pillar; RCWA parameter sweep over pillar width/radius producing transmission amplitude and phase curves. Right: lookup table maps each phase pixel to a pillar width/radius; output is a discrete geometry map.
+Required short English labels: Target Phase, SiN Nanopillar, Quartz Substrate, RCWA Sweep, Phase Lookup, Width / Radius Map.
+Composition: three-panel scientific diagram with a small unit-cell inset, curve plot motif, and geometry map. Fill 85-90% of canvas; labels short and accurate; no empty panels.
+Visual style: clean white paper figure, deep blue modules, teal nanostructures, restrained red markers on the lookup curve, consistent with v4 PPT.
+Avoid: no claim of experimental fabrication, no fake measurement table, no unreadable microtext, no wrong material labels, no dark background.

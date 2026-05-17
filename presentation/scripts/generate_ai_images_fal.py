@@ -305,6 +305,50 @@ Composition: central hub with four branches and four technical milestones; fill 
 Visual style: clean scientific roadmap, white background, blue/teal modules, red defect annotations.
 Avoid: no futuristic city, no fake brand logos, no dark background.
 """,
+    "v5_psf_to_phase_inverse_design": """
+Use case: scientific-educational
+Asset type: 16:9 thesis slide figure, same visual style as the existing v4 deck.
+Primary request: Draw a scientifically accurate PSF-to-phase inverse design figure for a metasurface optical frontend.
+Real data context to incorporate visually: DAGM optical student kernels were exported as PSF targets; the current package uses wavelength 532 nm, grid pitch 586 nm, detector distance 2.4 mm, PSF scale factor 2, and simulation canvas 1600 x 1600. Existing results include target PSF center crops and a back-propagated phase preview.
+Scene: left-to-right pipeline: Target PSF intensity from learned optical kernel -> angular-spectrum/back-propagation block -> optimized phase mask phi(x,y) -> simulated PSF on detector plane. Include small heatmap-like target PSF thumbnail, wrapped phase map thumbnail, and detector-plane PSF thumbnail.
+Required short English labels: Target PSF, Back Propagation, Phase Mask, Simulated PSF, Loss.
+Composition: one clean paper-style pipeline filling 85-90% of the canvas; no empty placeholder boxes; use arrows and three heatmap panels; make it look like an inserted method figure in a thesis, not a poster.
+Visual style: white background, deep blue/teal modules, restrained red loss arrow, crisp scientific diagram consistent with v4 PPT.
+Avoid: no pseudo text, no unreadable microtext, no wrong modules, no decorative sci-fi optics, no dark background.
+""",
+    "v5_angular_spectrum_loop": """
+Use case: scientific-educational
+Asset type: 16:9 thesis slide figure, same visual style as the existing v4 deck.
+Primary request: Draw the angular spectrum optimization loop used to connect phase distribution and target PSF.
+Real data context to incorporate visually: representative DAGM metasurface feasibility probes used 40 Adam iterations, learning rate 0.005, ROI size 96, CUDA simulation, and achieved cosine similarity about 0.979-0.991 for selected positive/negative branches. Wavelength is 532 nm, detector distance is 2.4 mm, simulation canvas is 1600 x 1600.
+Scene: closed loop: phase phi(x,y) -> FFT / angular spectrum transfer function H(fx,fy,z) -> propagated complex field Uz -> intensity |Uz|^2 simulated PSF -> compare with target PSF -> loss -> Adam update back to phase. Include target-vs-simulated PSF thumbnails and a tiny decreasing loss curve motif.
+Required short English labels: Phase, FFT, Transfer Function, Simulated PSF, Target PSF, Loss, Adam Update, Cosine 0.979-0.991.
+Composition: circular or rectangular loop diagram filling the page; formulas should be implied visually, not rendered as long text; labels short and readable.
+Visual style: Nature/IEEE-style scientific workflow, white background, blue/teal arrows, red loss/comparison highlight, consistent with v4 PPT.
+Avoid: no fake dense equations, no unreadable labels, no dark sci-fi style, no decorative-only light beams.
+""",
+    "v5_rcwa_phase_geometry_lookup": """
+Use case: scientific-educational
+Asset type: 16:9 thesis slide figure, same visual style as the existing v4 deck.
+Primary request: Draw a phase-to-geometry mapping workflow using RCWA simulation and a phase-geometry lookup table.
+Real data context to incorporate visually: the project currently uses a reference-inspired single-wavelength route at 532 nm and grid pitch 586 nm; target phase comes from PSF inverse design. This slide should be presented as the structure-parameter mapping step, not as fabricated measured data.
+Scene: left: target phase map phi(x,y). Middle: nanopillar unit cell on quartz/SiO2 substrate with SiN pillar; RCWA parameter sweep over pillar width/radius producing transmission amplitude and phase curves. Right: lookup table maps each phase pixel to a pillar width/radius; output is a discrete geometry map.
+Required short English labels: Target Phase, SiN Nanopillar, Quartz Substrate, RCWA Sweep, Phase Lookup, Width / Radius Map.
+Composition: three-panel scientific diagram with a small unit-cell inset, curve plot motif, and geometry map. Fill 85-90% of canvas; labels short and accurate; no empty panels.
+Visual style: clean white paper figure, deep blue modules, teal nanostructures, restrained red markers on the lookup curve, consistent with v4 PPT.
+Avoid: no claim of experimental fabrication, no fake measurement table, no unreadable microtext, no wrong material labels, no dark background.
+""",
+    "v5_metasurface_layout_parameters": """
+Use case: scientific-educational
+Asset type: 16:9 thesis slide figure, same visual style as the existing v4 deck.
+Primary request: Draw the final metasurface layout and physical parameter summary for the proposed optical frontend.
+Real data context to incorporate visually: current simulation settings are wavelength 532 nm, grid pitch 586 nm, detector distance 2.4 mm, PSF scale factor 2, simulation canvas 1600 x 1600, positive/negative branches from learned kernels, and SiN nanopillars on quartz/SiO2 substrate as the reference material route.
+Scene: a large metasurface array layout with varied nanopillar widths/radii according to a discrete geometry map; show one magnified unit cell, periodic pitch annotation, incident 532 nm light, detector plane at 2.4 mm, and output PSF on CMOS/detector. Include a compact parameter callout panel with short readable labels.
+Required short English labels: 532 nm, Pitch 586 nm, z = 2.4 mm, SiN, Quartz / SiO2, Geometry Map, Detector PSF, Positive / Negative Branch.
+Composition: one clean engineering layout figure; left/middle metasurface array and unit cell, right detector PSF, small parameter callout. Fill page without clutter.
+Visual style: scientific device schematic, white background, teal/blue metasurface, red PSF highlight, consistent with v4 PPT.
+Avoid: no wafer glamour shot, no fake brand logos, no dense pseudo text, no dark sci-fi style, no unsupported fabrication claims.
+""",
 }
 
 
